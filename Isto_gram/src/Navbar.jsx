@@ -1,4 +1,6 @@
+import Footer_navbar_in_page from './Footer_navbar_in_page'
 import './Navbar.css'
+
 function Navbar() {
   return (
     <>
@@ -52,7 +54,10 @@ function Navbar() {
                 <i className="fa-regular fa-heart"></i>
             </div>
         </div>
-        <div className="down">
+        {/* <main>
+
+        </main> */}
+        {/* <div className="down">
             <ul>
             <li><i className="fa-solid fa-house"></i></li>
 
@@ -62,14 +67,14 @@ function Navbar() {
             <li><i className="fa-brands fa-facebook-messenger"></i></li>
                 <li>
                 <div className="circle">
-                    <img src="" alt="" />
+                    <img src="./half.jpg" alt="" />
                 </div>
                 </li>
                 <li>
 
                 </li>
             </ul>
-        </div>
+        </div> */}
     </nav>
       
     </>

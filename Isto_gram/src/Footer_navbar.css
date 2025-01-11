@@ -1,0 +1,39 @@
+.mini .down{
+    background-color: rgba(0, 0, 0, 0.968);
+    position: fixed;
+    box-shadow: -1px 9px 9px 8px black;
+    /* display: flex; */
+    border: 2px solid white;
+    top:90vh;
+    bottom: 0px;
+    padding-top: 15px;
+
+    padding-bottom: 15px;
+    color: white;
+    /* height: 20px; */
+    width: 100%;
+    /* margin-bottom: 15px; */
+}
+.mini .down ul {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    
+
+}
+.mini .down ul li{
+    
+    list-style: none;
+}
+.mini .down ul li .circle {
+    height: 10px;
+    width: 10px;
+    display: flex;
+}
+.mini .down ul li .circle img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
