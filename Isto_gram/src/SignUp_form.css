@@ -1,0 +1,126 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.conatiner{
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://i0.wp.com/picjumbo.com/wp-content/uploads/red-and-blue-pillars-wallpaper-abstract-background-free-image.jpeg?w=600&quality=80');
+    background-size: cover;
+    background-color: rgb(22, 65, 102);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.conatiner .form{
+    height: 500px;
+    width: 350px;
+    padding: 10px;
+    /* background-color: rgba(6, 2, 6, 0.37); */
+    background:repeating-radial-gradient(circle,#c50909,#262628 20%);
+    /* border: 2px dotted black; */
+    box-shadow: -2px -1px 5px 8px red;
+    border: none;
+   
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    /* justify-content: space-between; */
+}
+.conatiner .form h1{
+    font-size: 40px;
+    color: wheat;
+    font-style: italic;
+    padding: 5px;
+
+}
+.conatiner .form form{
+    width: 100%;
+    height: 90%;
+    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    color: white;
+
+}
+.conatiner .form form .name ,.conatiner .form form .email ,.conatiner .form form .moblie ,.conatiner .form form .password ,.conatiner .form form .confirmPassword{
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    width: 100%;
+}
+.conatiner .form form .name label,.conatiner .form form .email label ,.conatiner .form form .moblie label,.conatiner .form form .password label,.conatiner .form form .confirmPassword label{
+    font-size: 20px;
+}
+.conatiner .form form .name input ,.conatiner .form form .email input,.conatiner .form form .moblie input ,.conatiner .form form .password input,.conatiner .form form .confirmPassword input{
+    height: 35px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+}
+.conatiner .form form button{
+    padding: 8px;
+    font-size: 20px;
+    font-style: initial;
+    border-radius: 5px;
+    border: none;
+}
+.conatiner .form form button:hover{
+    cursor: pointer;
+    background: linear-gradient(red,blue);
+    color: white;
+    border: none;
+}
+@media screen and (max-width: 420px) {
+    
+    .conatiner .form{
+        height: 400px;
+        width: 250px;
+        padding: 10px;
+        /* background-color: rgba(6, 2, 6, 0.37); */
+        background:repeating-radial-gradient(circle,#c50909,#262628 20%);
+        /* border: 2px dotted black; */
+        box-shadow: -2px -1px 5px 8px red;
+        border: none;
+       
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        /* justify-content: space-between; */
+    }
+    
+   
+    
+    .conatiner .form form .name label,.conatiner .form form .email label ,.conatiner .form form .moblie label,.conatiner .form form .password label,.conatiner .form form .conformPassword label{
+        font-size: 16px;
+    }
+    .conatiner .form form .name input ,.conatiner .form form .email input,.conatiner .form form .moblie input ,.conatiner .form form .password input,.conatiner .form form .conformPassword input{
+        height:23px;
+        border: none;
+        outline: none;
+        padding-left: 10px;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+    .conatiner .form form button{
+        padding: 8px;
+        font-size: 16px;
+        font-style: initial;
+        border-radius: 5px;
+        border: none;
+    }
+    .conatiner .form form button:hover{
+        cursor: pointer;
+        background: linear-gradient(red,blue);
+        color: white;
+        border: none;
+    }
+}

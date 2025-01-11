@@ -1,0 +1,108 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.Main_navbar {
+    height: 100vh;
+    width: 20%;
+    background-color: rgba(0, 0, 0, 0.936);
+    color: white;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    border-right: 1px solid whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+   
+    
+
+}
+.Main_navbar .logo{
+    font-size: 30px;
+    font-weight: 100;
+    font-family:'Pacifico',cursive;
+}
+
+.Main_navbar .ul{
+    /* height: 450px; */
+    height: 80%;
+    width: 100%;
+    list-style: none;
+    /* border: 2px solid rgb(141, 103, 103); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.Main_navbar .ul li{
+    width: 90%;
+    /* background-color: aliceblue; */
+    border: 0.1px solid transparent;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont;
+    padding-left: 10px;
+    padding: 10px;
+}
+.Main_navbar .ul li:hover{
+    background-color: rgba(58, 48, 48, 0.963);
+    border: 0.1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    /* padding-left: 10px; */
+    /* margin-left: 10px; */
+}
+.Main_navbar .ul li div{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+.Main_navbar .ul li div i{
+    font-size: 23px;
+}
+.Main_navbar .ul li div span{
+    font-size: 20px;
+    font-family:initial;
+}
+.Main_navbar .ul .photo div {
+    width: 100%;
+    /* border: 2px solid white; */
+    display: flex;
+    /* justify-content: center; */
+
+    align-items: center;
+    /* flex-direction: c; */
+    /* align-items: center; */
+}
+.Main_navbar .ul .photo div span{
+    font-size: 20px;
+}
+.Main_navbar .ul .photo  div .circle{
+    overflow: hidden;
+    height: 30px;
+    width: 30px;
+}
+.Main_navbar .ul .photo  div .circle img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.mini{
+    display: none;
+}
+@media screen and (max-width: 768px){
+    .mini{
+        display: block;
+    }
+    .Main_navbar{
+        display: none;
+    }
+    
+
+}
