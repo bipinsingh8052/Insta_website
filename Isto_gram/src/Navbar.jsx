@@ -1,7 +1,27 @@
+import { useState } from 'react'
 import Footer_navbar_in_page from './Footer_navbar_in_page'
 import './Navbar.css'
 
 function Navbar() {
+    let [inputvalue,setinput]=useState({
+        search:""
+    });
+    let [search,setsearch]=useState( <i className="fa-solid fa-magnifying-glass"></i>)
+    function inputSearch(e){
+        
+        let {name, value}=e.target;
+        if(value.length==1){
+            setsearch("   ")
+        }if(value.length ==0){
+            setsearch(<i className="fa-solid fa-magnifying-glass"></i>)
+
+        }
+        setinput({
+            ...inputvalue,
+            [name]:value}
+        )
+
+    }
   return (
     <>
     <nav className='Main_navbar'> 
@@ -45,14 +65,20 @@ function Navbar() {
     <nav className="mini">
         <div className="upper">
             <h1>Instragram</h1>
-            <div className="search">
+            
                 <div className="input">
-                    <i className="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" name='search' placeholder=' Search' />
+                    <div className="input_main">
+                    {search}
+                    <input type="text" name='search' placeholder=' Search' value={inputvalue.search} onChange={inputSearch} />
+                    </div>
+                    <div className="message">
+                        <i className="fa-regular fa-heart"></i>
+                        </div>
                     </div>
 
-                <i className="fa-regular fa-heart"></i>
-            </div>
+                
+            
+          
         </div>
         {/* <main>
 

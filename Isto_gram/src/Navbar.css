@@ -115,7 +115,52 @@
         background-color: black;
         color: white;
         display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-around;
+        padding: 10px;
     }
+
+
+    .mini .upper  h1{
+        font-family:'Pacifico',cursive;
+        font-size: 20px;
+      
+    }
+    .mini .upper .input{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+        width: 40%;
+        /* border: 2px solid wheat; */
+    }
+    .mini .upper .input .input_main{
+        height: 25px;
+        border: 1px solid blanchedalmond;
+        background-color: whitesmoke;
+        border-radius: 5px;
+    }
+    .mini .upper .input .input_main i{
+        position: relative;
+        color: black;
+        top: 0px;
+    }
+    .mini .upper .input .input_main input{
+        height: 100%;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        padding-left: 10px;
+    }
+    .mini .upper .input .input_main input:::placeholder{
+        padding-left: 1px;
+    }
+    .mini .upper .input .message {
+        font-size: 25px;
+        /* background-color: red; */
+    }
+    
     .mini .down{
         background-color: rgba(0, 0, 0, 0.968);
         position: fixed;
@@ -155,5 +200,63 @@
         width: 100%;
         border-radius: 50%;
     }
+    
 
+}
+@media screen and (max-width: 420px){
+
+    .mini .upper{
+        /* height: 200px; */
+        width: 100%;
+        /* border: 1px solid black; */
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-around;
+        padding: 10px;
+    }
+    .mini .upper  h1{
+        font-family:'Pacifico',cursive;
+        font-size: 18px;
+      
+    }
+    .mini .upper .input{
+        display: flex;
+        /* flex-direction: column; */
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+        width: 60%;
+        /* border: 2px solid wheat; */
+    }
+    .mini .upper .input .input_main{
+        height: 25px;
+        border: 1px solid blanchedalmond;
+        background-color: whitesmoke;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mini .upper .input .input_main i{
+        position: relative;
+        color: black;
+        top: 0px;
+    }
+    .mini .upper .input .input_main input{
+        height: 100%;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        padding-left: 10px;
+    }
+    .mini .upper .input .input_main input:::placeholder{
+        padding-left: 1px;
+    }
+    .mini .upper .input .message {
+        font-size: 25px;
+        /* background-color: red; */
+    }
 }
