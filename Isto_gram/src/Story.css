@@ -1,0 +1,83 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.all_info{
+    background-color: black;
+
+    color: white;
+    height: 80px;
+    width: 60%;
+    /* border: 2px solid black; */
+    overflow-x: scroll;white-space: nowrap;
+
+    overflow-y: visible;
+    /* margin-top: 15px;
+    margin-bottom: 15px; */
+    padding-top: 12px ;
+    padding-bottom: 12px;
+}
+.all_info::-webkit-scrollbar{
+    display: none;
+}
+.all_info .story {
+    height: 100%;
+    width: 1000px;
+    display: flex;
+    gap: 15px;
+   
+}
+.all_info .story  .main{
+    height: 100%;
+
+    width: 90px;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: center;
+
+    justify-content: space-around;
+    /* border: 2px solid black; */
+}
+.all_info .story  .main .circle{
+    height: 70%;
+    width: 100%;
+    /* border: 1px solid black;
+    border: 1px solid black; */
+    border-top: 2px solid rgb(203, 50, 11);
+    border-left: 2px solid rgb(201, 228, 64);
+    border-bottom: 2px solid   rgb(234, 82, 44);
+    border-right: 2px solid  rgb(222, 64, 25);
+    border: 2px solid li;
+    box-shadow: inset;
+    border-radius: 50%;
+}
+.all_info .story  .main .circle img{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.all_info .story  .main .name{
+    font-size: 12px;
+}
+.all_info .story  .main:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px){
+    .all_info{
+    
+        height: 80px;
+        width: 100%;
+        /* border: 2px solid black; */
+        overflow-x: scroll;white-space: nowrap;
+    
+        overflow-y: visible;
+        padding-top: 10px ;
+    padding-bottom: 10px;
+    }
+}
