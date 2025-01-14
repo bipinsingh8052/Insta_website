@@ -7,7 +7,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
     height: 90vh;
-    width: 60%;
+    width: 100%;
     background-color: black;
     overflow-y: scroll;
     /* overflow-y: visible; */
@@ -27,7 +27,7 @@
 }
 .Post .post_main .all_info{
     height: 700px;
-    width: 75%;
+    width: 70%;
     /* border: 1px solid white; */
     display: flex;
     flex-direction: column;
@@ -117,7 +117,7 @@
 }
 .Post .post_main .all_info .post_footer .like i:hover{
     cursor: pointer;
-   color:rgb(99, 77, 77);
+   /* color:rgb(99, 77, 77); */
 }
 .Post .post_main .all_info .post_footer .like .message{
     display: flex;
@@ -168,6 +168,65 @@
     cursor: pointer;
     color:rgb(215, 196, 196);
 }
+.liked{
+    color: red;
+}
+.messaged{
+    /* color: orange; */
+}
+.saved{
+    /* color: blueviolet; */
+}
+
+
+/* dots */
+.in{
+    position:absolute;top: 0px;
+    left: 0px;
+    background-color: rgba(66, 43, 43, 0.686);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.in .box{
+    height: 300px;
+    width: 300px;
+
+    border: 2px solid black;
+    background-color: rgb(29, 27, 27);
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    border-radius: 15px;
+   
+    
+}
+
+.in .box p{
+    font-size: 22px;
+    padding: 10px;
+    font-weight:10;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid rgb(168, 125, 125);
+}
+.in .box p span{
+    color: red;
+}
+.in .box p:hover{
+    cursor: pointer;
+    background-color: black;
+}
+
+/* dots */
+
 
 
 
@@ -288,5 +347,14 @@
         color: rgb(200, 144, 144);
         font-size: 8px;
     }
+
+
+
+
+
+
+
+
+
     
 }
