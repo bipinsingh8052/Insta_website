@@ -9,11 +9,12 @@ function App() {
     <>
       {/* <SignUp_Form/> */}
       {/* <Login/> */}
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Home_page/>}>
         <Route index element={<Comment/>}/>
         </Route>
-      </Routes>
+      </Routes> */}
+      <Home_page/>
     </>
   )
 }

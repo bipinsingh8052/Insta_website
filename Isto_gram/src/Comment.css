@@ -199,9 +199,11 @@
 }
 .comment_section .main_section .comment_info  .post_footer .input form {
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    justify-content: space-between;
+    /* gap: 5px; */
 }
 .comment_section .main_section .comment_info  .post_footer .input form input{
     height: 30px;
@@ -240,7 +242,7 @@
 /* message */
 
 .comment_section{
-    height: 100vh;
+    height: auto;
     width: 100%;
     position: absolute;
     top: 0px;
@@ -258,6 +260,7 @@
     /* border: 2px solid black; */
     display: flex;
     flex-direction: column;
+    gap: 10px;
     color: white;
 }
 .comment_section .main_section button{
@@ -303,6 +306,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 10px;
     justify-content: space-between;
 
 }
@@ -442,11 +446,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    justify-content: space-between;
     gap: 5px;
+    /* border: 2px solid rgb(25, 55, 153); */
 }
 .comment_section .main_section .comment_info  .post_footer .input form input{
     
-    width: 100%;
+    width: auto;
     color: rgb(200, 144, 144);
     /* background-color: black; */
     background-color: transparent;

@@ -20,7 +20,8 @@ function Home_page() {
     //    <div className="fa"> <Account_Home_page/></div>
     // </div>
     // <Account_Home_page/>
-    <Post/>
+    // <Post/>
+    <Comment_page/>
   )
 }
 

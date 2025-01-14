@@ -1,10 +1,13 @@
 import { useRef, useState } from 'react'
 import './Post.css'
+import Comment_page from './Comment_page'
+
 function Post() {
     let [dots,setdots]=useState(<i className="fa-solid fa-ellipsis"></i>)
    let [option,setoption]=useState(false)
-  let comment_page =useNav
-  
+
+   let [change_page,setchange_page]=useState(false)
+
 
 
    let [p,setp]=useState(false);
@@ -58,6 +61,14 @@ function Post() {
         }
          
         
+    }
+    function viewComment(){
+
+       setchange_page(true)
+
+    }
+    if(change_page){
+        return <Comment_page/>
     }
    
   return (
