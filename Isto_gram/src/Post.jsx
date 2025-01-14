@@ -42,6 +42,9 @@ function Post() {
     function changeIt(){
         setoption(!option)
         if(option){
+            setdots(<i className="fa-solid fa-ellipsis"></i>)
+        }
+        else{
             setdots(
                 <div className="in" onClick={closeit}>
                     <div className="box">
@@ -55,9 +58,7 @@ function Post() {
                     </div>
                 </div>
             )
-        }
-        else{
-            setdots(<i className="fa-solid fa-ellipsis"></i>)
+           
         }
          
         

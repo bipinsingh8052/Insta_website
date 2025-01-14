@@ -132,3 +132,10 @@
     font-size: 12px;
     color: rgb(183, 151, 151);
 }
+
+
+@media screen and (max-width: 768px){
+    .profile{
+        display: none;
+    }
+}

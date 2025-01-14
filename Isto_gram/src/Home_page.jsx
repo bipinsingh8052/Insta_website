@@ -3,6 +3,7 @@ import Comment_page from "./Comment_page"
 import Navbar from "./Navbar"
 import Post from "./Post"
 import Story from "./Story"
+import Working_on_page from "./Working_on_page"
 
 
 function Home_page() {
@@ -21,7 +22,9 @@ function Home_page() {
     // </div>
     // <Account_Home_page/>
     // <Post/>
-    <Comment_page/>
+    // <Comment_page/>
+    // 
+    <Working_on_page/>
   )
 }
 
