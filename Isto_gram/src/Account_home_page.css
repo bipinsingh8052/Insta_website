@@ -1,0 +1,134 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.profile{
+    height: auto;
+    width: 100%;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    padding: 20px;
+}
+.profile .myprofile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile .myprofile span{
+    font-size: 14px;
+    color: blue;
+}
+.profile .myprofile span:hover{
+    color: rgb(5, 5, 244);cursor: pointer;
+}
+.profile .myprofile .img{
+    width: 100%;
+    display: flex;gap: 10px;
+}
+.profile .myprofile .img div{
+    display: flex;gap: 2px;
+    flex-direction: column;
+    justify-content: center;
+}
+.profile .myprofile .img div p{
+    font-size: 14px;
+}
+.profile .myprofile .img div span{
+    font-size: 11px;
+    color: rgb(200, 162, 162);
+}
+.profile .myprofile .img img{
+    height: 50px;
+    width: 55px;
+    border: 2px solid rgb(214, 36, 36);
+    border-radius: 50%;
+}
+.profile .border{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.profile .border p{
+    color: rgb(191, 161, 161);
+}
+.profile .border span{
+  color: white;
+    font-size: 12px;
+}
+.profile .border span:hover{
+    cursor: pointer;
+    color: rgb(136, 107, 107);
+}
+.profile .all_profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.profile .all_profile .first{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.profile .all_profile .first span{
+    font-size: 14px;
+    color:blue;
+}
+.profile .all_profile .first span:hover{
+    color: blueviolet;
+    cursor: pointer;
+}
+.profile .all_profile .first .img{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.profile .all_profile .first .img img{
+    height: 50px;
+    width: 55px;
+    border: 2px solid rgb(179, 30, 22);
+    border-radius: 50%;
+}
+.profile .all_profile .first .img div {
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+}
+.profile .all_profile .first .img div p{
+    font-size: 14px;
+    color: white;
+    
+}
+.profile .all_profile .first .img div span{
+    font-size: 12px;
+    color: rgb(189, 159, 159);
+}
+
+.profile .footer{
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+.profile .footer ul {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.profile .footer ul li{
+    font-size: 11px;
+    color: rgb(184, 160, 160);
+}
+.profile .footer  span{
+    font-size: 12px;
+    color: rgb(183, 151, 151);
+}

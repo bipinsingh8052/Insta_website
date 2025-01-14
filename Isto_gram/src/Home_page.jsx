@@ -5,15 +5,20 @@ import Story from "./Story"
 
 
 function Home_page() {
+
   return (
-    <div>
-        {/* <Navbar/> */}
+    // <div className="main" style={{display:"flex",justifyContent:"center",alignContent:"center"}}>
+    //     {/* <Navbar/> */}
 
-        <Story/>
+    //     <div className="con" style={{border:"2px solid black",height:"auto",width:"60%" }}>
 
-        <Post/>
-        <Account_Home_page/>
-    </div>
+    //               <Story/>
+
+    //       <Post/>
+    //     </div>
+    //    <div className="fa"> <Account_Home_page/></div>
+    // </div>
+    <Account_Home_page/>
   )
 }
 

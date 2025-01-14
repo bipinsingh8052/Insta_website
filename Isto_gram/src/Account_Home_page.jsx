@@ -6,12 +6,16 @@ function Account_Home_page() {
     <div className="profile">
         <div className="myprofile">
             <div className="img">
-                <img src="" alt="" />
+                <img src="./full.jpg" alt="" />
+                <div>
                 <p>bipin_singh8052</p><span>Bipin Singh</span>
+                </div>
             </div>
             
             <span>Switch</span>
+            
         </div>
+        
         <div className="border">
             <p>Suggested for you </p>
             <span>See All</span>
@@ -19,8 +23,10 @@ function Account_Home_page() {
         <div className="all_profile">
             <div className="first">
                 <div className="img">
-                    <img src="" alt="" />
+                    <img src="./half.jpg" alt="" />
+                    <div>
                     <p>pvtt.ydvv.shivank</p><span>Followed by vivek.pov</span>
+                    </div>
                 </div>
                 
                 <span>Follow</span>
