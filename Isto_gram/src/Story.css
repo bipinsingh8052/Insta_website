@@ -8,7 +8,7 @@
 
     color: white;
     height: 80px;
-    width: 60%;
+    width: 100%;
     /* border: 2px solid black; */
     overflow-x: scroll;white-space: nowrap;
 
@@ -23,7 +23,7 @@
 }
 .all_info .story {
     height: 100%;
-    width: 1000px;
+    width: auto;
     display: flex;
     gap: 15px;
    

@@ -1,6 +1,16 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './Story.css'
+import Status_show from './Status_show';
 function Story() {
+
+    let [close,setclose]=useState(false);
+    function StatusShow(e){
+        setclose(true);
+
+    }
+    if(close){
+        return <StatusShow/>
+    }
     useEffect(()=>{
         let a=document.querySelectorAll(".name p")
         // console.log(a)
@@ -23,8 +33,8 @@ function Story() {
     <div className="all_info">
         <div className="story">
             <div className="main">
-                <div className="circle">
-                    <img src="" alt="" />
+                <div className="circle" onClick={StatusShow}>
+                    <img src="./working.jpg" alt="" />
                 </div>
                 <div className="name">
                     <p>rohit_thakur</p>
