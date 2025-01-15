@@ -1,0 +1,41 @@
+{
+    "all_data_info_in_insta":[
+
+        {
+
+            "name":"Bipin_singh8052",
+            "like":89,
+            "address":"Indore Bhopal Highway",
+            "status":{
+                "video_url":"https://youtube.com/shorts/Q-ozJnwc-NY?si=6AuUOmpUm0tOLlst",
+                "imageurl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqzcrXGrPLa4OQidpaiz6v5kfWvuq71YpnEQ&s"
+            },
+            
+            "profile":{
+                "meurl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-y-fFn8KjGMJWwHyFA32_Xvysu-c0c3pHIw&s"
+            },
+            "message":{
+               "me":"मैं और मेरे भाई ही मेरी ताक़त है आज जो भी हूँ वही सब के दाम पे ही हूँ बाक़ी सब अपने हाल पे ठीक है जय सुमेश्वर नाथ महादेव।"
+            }
+        }
+    ],
+    "message":[
+        {
+                    "name":"nikhil_araya",
+                    "comment":"you are looking good",
+                    "user":{
+                         "name":"basant_yadav_jii",
+                         "comment":"you are my bestfrnd"
+                    },
+                    "user1":{
+                             "name":"nikil_kumar_singh",
+                            "comment":"nice bro"
+                    },
+                    "user3":{
+                        "name":"bipinsingh8052",
+                        "comment":"killer pic"
+                    }
+        }     
+            
+        ]
+    }

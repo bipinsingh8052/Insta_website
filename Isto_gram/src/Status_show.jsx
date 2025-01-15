@@ -32,7 +32,7 @@ export default function Status_show() {
             <video
                 ref={videoRef}
                 width="100%"
-                src="https://www.youtube.com/embed/IyOv7Yhxaaw?si=MWhs1Nj47Fj7x-jV"
+                src="https://youtube.com/shorts/Q-ozJnwc-NY?si=6AuUOmpUm0tOLlst"
                 controls={false}
                 poster="https://via.placeholder.com/600x400" // Add your poster image
             ></video>
