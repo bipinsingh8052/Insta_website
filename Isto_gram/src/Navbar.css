@@ -12,7 +12,7 @@
     position: fixed;
     top: 0px;
     bottom: 0px;
-    border-right: 1px solid whitesmoke;
+    border-right: 1px solid rgb(147, 121, 121);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,7 +50,7 @@
     padding: 10px;
 }
 .Main_navbar .ul li:hover{
-    background-color: rgba(58, 48, 48, 0.963);
+    background-color: rgba(121, 105, 105, 0.963);
     border: 0.1px solid black;
     border-radius: 10px;
     cursor: pointer;
@@ -161,45 +161,7 @@
         /* background-color: red; */
     }
     
-    .mini .down{
-        background-color: rgba(0, 0, 0, 0.968);
-        position: fixed;
-        box-shadow: -1px 9px 9px 8px black;
-        /* display: flex; */
-        border: 2px solid white;
-        top:90vh;
-        bottom: 0px;
-        padding-top: 15px;
-
-        padding-bottom: 15px;
-        color: white;
-        /* height: 20px; */
-        width: 100%;
-        /* margin-bottom: 15px; */
-    }
-    .mini .down ul {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-        justify-content: space-evenly;
-        
     
-    }
-    .mini .down ul li{
-        
-        list-style: none;
-    }
-    .mini .down ul li .circle {
-        height: 10px;
-        width: 10px;
-        display: flex;
-    }
-    .mini .down ul li .circle img{
-        height: 100%;
-        width: 100%;
-        border-radius: 50%;
-    }
     
 
 }
@@ -214,12 +176,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        justify-content: space-around;
+        justify-content: space-between;
         padding: 10px;
     }
     .mini .upper  h1{
         font-family:'Pacifico',cursive;
-        font-size: 18px;
+        font-size: 15px;
       
     }
     .mini .upper .input{
@@ -228,7 +190,7 @@
         align-items: center;
         justify-content: center;
         justify-content: space-between;
-        width: 60%;
+        width: 70%;
         /* border: 2px solid wheat; */
     }
     .mini .upper .input .input_main{
@@ -246,7 +208,7 @@
         top: 0px;
     }
     .mini .upper .input .input_main input{
-        height: 100%;
+        height: 80%;
         border: none;
         outline: none;
         border-radius: 5px;
@@ -256,7 +218,7 @@
         padding-left: 1px;
     }
     .mini .upper .input .message {
-        font-size: 25px;
+        font-size: 20px;
         /* background-color: red; */
     }
 }

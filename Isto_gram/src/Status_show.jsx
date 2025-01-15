@@ -2,39 +2,41 @@ import './Status_show.css'
 import  { useRef, useState } from "react";
 
 export default function Status_show() {
-    const videoRef = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [volume, setVolume] = useState(1);
+    // const videoRef = useRef(null);
+    // const [isPlaying, setIsPlaying] = useState(false);
+    // const [volume, setVolume] = useState(1);
 
-    const handlePlayPause = () => {
-        if (isPlaying) {
-            videoRef.current.pause();
-        } else {
-            videoRef.current.play();
-        }
-        setIsPlaying(!isPlaying);
-    };
+    // const handlePlayPause = () => {
+    //     if (isPlaying) {
+    //         videoRef.current.pause();
+    //     } else {
+    //         videoRef.current.play();
+    //     }
+    //     setIsPlaying(!isPlaying);
+    // };
 
-    const handleVolumeChange = (event) => {
-        const newVolume = event.target.value;
-        videoRef.current.volume = newVolume;
-        setVolume(newVolume);
-    };
+    // const handleVolumeChange = (event) => {
+    //     const newVolume = event.target.value;
+    //     videoRef.current.volume = newVolume;
+    //     setVolume(newVolume);
+    // };
 
-    const handleFullScreen = () => {
-        if (videoRef.current.requestFullscreen) {
-            videoRef.current.requestFullscreen();
-        }
-    };
+    // const handleFullScreen = () => {
+    //     if (videoRef.current.requestFullscreen) {
+    //         videoRef.current.requestFullscreen();
+    //     }
+    // };
 
     return (
-        <div className="video-player">
+        <>
+       
+        {/* <div className="video-player">
             <video
                 ref={videoRef}
                 width="100%"
-                src="https://youtube.com/shorts/Q-ozJnwc-NY?si=6AuUOmpUm0tOLlst"
-                controls={false}
-                poster="https://via.placeholder.com/600x400" // Add your poster image
+                src=" https://www.instagram.com/reel/DEzir4qCiMf/?utm_source=ig_web_copy_link"
+                // controls={false}
+                // poster="https://via.placeholder.com/600x400" // Add your poster image
             ></video>
             <div className="controls">
                 <button onClick={handlePlayPause}>
@@ -50,6 +52,10 @@ export default function Status_show() {
                 />
                 <button onClick={handleFullScreen}>Full Screen</button>
             </div>
-        </div>
+        </div> */}
+        <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/4mVhw-LP_bw?si=QuM6WeEy2goyeX3l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    </>
     );
 }

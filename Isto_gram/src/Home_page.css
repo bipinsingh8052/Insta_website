@@ -1,0 +1,84 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* background-color: blue; */
+   
+}
+.Home_section_on_page{
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    background-color: black;
+}
+.Home_section_on_page .home_section_first{
+    height: 100%;
+    width: 20%;
+
+}
+.Home_section_on_page .home_section_two{
+    height: 100%;
+    width: 60%;
+   
+    /* border: 2px solid blanchedalmond; */
+}
+.Home_section_on_page .home_section_three{
+    height: 100%;
+    width: 20%;
+    /* border: 1px solid white; */
+    overflow: hidden;
+    position: relative;
+}
+
+@media screen and (max-width: 768px){
+    .Home_section_on_page{
+        height: auto;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+    }
+    .Home_section_on_page .home_section_first{
+        /* height: 100%;
+        width: 20%; */
+        /* position: relative;
+        top: 0px; */
+        width: 100%;
+        /* height: 0%; */
+        background-color: aliceblue;
+    
+    }
+    .Home_section_on_page .home_section_first .home_navbar{
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        height: 40%;
+    }
+    .Home_section_on_page .home_section_first .home_navbar_two{
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+    }
+    .Home_section_on_page .home_section_two{
+        /* height: 100%;
+        width: 60%; */
+        width: 100%;
+        height:60% ;
+        margin-top:50px;
+
+
+       
+        /* border: 2px solid blanchedalmond; */
+    }
+    .Home_section_on_page .home_section_two Story{
+        height: 40px;
+        width: 100%;
+    }
+    .Home_section_on_page .home_section_two Post{
+        height: 60%;
+        width: 100%;
+    }
+    
+}

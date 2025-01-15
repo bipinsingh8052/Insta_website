@@ -1,7 +1,7 @@
 import './Footer_navbar.css'
 function Footer_navbar_in_page() {
   return (
-    <div>
+    <div className='mini'>
       <div className="down">
             <ul>
             <li><i className="fa-solid fa-house"></i></li>
@@ -14,9 +14,6 @@ function Footer_navbar_in_page() {
                 <div className="circle">
                     <img src="./half.jpg" alt="" />
                 </div>
-                </li>
-                <li>
-
                 </li>
             </ul>
         </div>

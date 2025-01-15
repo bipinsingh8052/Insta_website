@@ -3,9 +3,16 @@
     flex-direction: column;
     align-items: center;
     background-color: black;
+    background:url('"https://www.youtube.com/embed/4mVhw-LP_bw?si=QuM6WeEy2goyeX3l"');
     padding: 10px;
     width: 600px;
     margin: auto;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background: url('https://www.youtube.com/embed/4mVhw-LP_bw?si=QuM6WeEy2goyeX3l');
 }
 
 .controls {

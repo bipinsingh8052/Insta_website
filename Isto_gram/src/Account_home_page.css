@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .profile{
-    height: auto;
+    height: 700px;
     width: 100%;
     background-color: black;
     color: white;
@@ -14,9 +14,10 @@
     flex-direction: column;
     /* justify-content: center;
     align-items: center; */
-    padding: 20px;
+    padding: 20px;position: relative;
 }
 .profile .myprofile{
+    /* height: ; */
     display: flex;
     justify-content: center;
     align-items: center;
