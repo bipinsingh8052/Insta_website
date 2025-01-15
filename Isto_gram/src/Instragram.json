@@ -1,41 +1,478 @@
 {
-    "all_data_info_in_insta":[
-
-        {
-
-            "name":"Bipin_singh8052",
-            "like":89,
-            "address":"Indore Bhopal Highway",
-            "status":{
-                "video_url":"https://youtube.com/shorts/Q-ozJnwc-NY?si=6AuUOmpUm0tOLlst",
-                "imageurl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqzcrXGrPLa4OQidpaiz6v5kfWvuq71YpnEQ&s"
+   "all_data_info_in_insta": [
+          {
+            "name": "Aman_4928",
+            "like": 312,
+            "address": "Chennai Main Street",
+            "status": {
+              "video_url": "https://youtube.com/shorts/827721",
+              "imageurl": "https://picsum.photos/200/300/663995"
             },
-            
-            "profile":{
-                "meurl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-y-fFn8KjGMJWwHyFA32_Xvysu-c0c3pHIw&s"
+            "profile": {
+              "meurl": "https://picsum.photos/100/100/568047"
             },
-            "message":{
-               "me":"मैं और मेरे भाई ही मेरी ताक़त है आज जो भी हूँ वही सब के दाम पे ही हूँ बाक़ी सब अपने हाल पे ठीक है जय सुमेश्वर नाथ महादेव।"
+            "message": {
+              "me": "Keep smiling, it suits you."
             }
-        }
-    ],
-    "message":[
-        {
-                    "name":"nikhil_araya",
-                    "comment":"you are looking good",
-                    "user":{
-                         "name":"basant_yadav_jii",
-                         "comment":"you are my bestfrnd"
-                    },
-                    "user1":{
-                             "name":"nikil_kumar_singh",
-                            "comment":"nice bro"
-                    },
-                    "user3":{
-                        "name":"bipinsingh8052",
-                        "comment":"killer pic"
-                    }
-        }     
-            
-        ]
+          },
+          {
+            "name": "Rajesh_9199",
+            "like": 123,
+            "address": "Delhi Boulevard",
+            "status": {
+              "video_url": "https://youtube.com/shorts/131575",
+              "imageurl": "https://picsum.photos/200/300/114642"
+            },
+            "profile": {
+              "meurl": "https://picsum.photos/100/100/204726"
+            },
+            "message": {
+              "me": "Dream big, work hard, stay focused."
+            }
+          },
+          {
+            "name": "Ankit_2182",
+            "like": 66,
+            "address": "Pune Highway",
+            "status": {
+              "video_url": "https://youtube.com/shorts/272560",
+              "imageurl": "https://picsum.photos/200/300/250393"
+            },
+            "profile": {
+              "meurl": "https://picsum.photos/100/100/977008"
+            },
+            "message": {
+              "me": "In the end, we only regret the chances we didn’t take."
+            }
+          },
+          {
+            "name": "Rohit_9590",
+            "like": 283,
+            "address": "London Main Street",
+            "status": {
+              "video_url": "https://youtube.com/shorts/683232",
+              "imageurl": "https://picsum.photos/200/300/586771"
+            },
+            "profile": {
+              "meurl": "https://picsum.photos/100/100/311022"
+            },
+            "message": {
+              "me": "Life is beautiful when shared with friends."
+            }
+          },
+          {
+            "name": "John_9132",
+            "like": 190,
+            "address": "Mumbai Avenue",
+            "status": {
+              "video_url": "https://youtube.com/shorts/912888",
+              "imageurl": "https://picsum.photos/200/300/652963"
+            },
+            "profile": {
+              "meurl": "https://picsum.photos/100/100/487518"
+            },
+            "message": {
+              "me": "Keep smiling, it suits you."
+            }
+          },
+          {
+            "name": "John_1647",
+            "like": 286,
+            "address": "Pune Highway",
+            "status": {
+              "video_url": "https://youtube.com/shorts/936945",
+              "imageurl": "https://picsum.photos/200/300/421282"
+            },
+            "profile": {
+              "meurl": "https://picsum.photos/100/100/167477"
+            },
+            "message": {
+              "me": "Adventure awaits, let's explore!"
+            }
+          },
+          {
+            "name": "Emily_7607",
+            "like": 92,
+            "address": "Pune Road",
+            "status": {
+              "video_url": "https://youtube.com/shorts/683051",
+              "imageurl": "https://picsum.photos/200/300/119181"
+            },
+            "profile": {
+              "meurl": "https://picsum.photos/100/100/684420"
+            },
+            "message": {
+              "me": "In the end, we only regret the chances we didn’t take."
+            }
+          },
+          {
+            "name": "Neha_5785",
+            "like": 291,
+            "address": "New York Main Street",
+            "status": {
+              "video_url": "https://youtube.com/shorts/180012",
+              "imageurl": "https://picsum.photos/200/300/936307"
+            },
+            "profile": {
+              "meurl": "https://picsum.photos/100/100/258820"
+            },
+            "message": {
+              "me": "In the end, we only regret the chances we didn’t take."
+            }
+          },
+          {
+            "name": "Vikas_2916",
+            "like": 171,
+            "address": "Paris Highway",
+            "status": {
+              "video_url": "https://youtube.com/shorts/156925",
+              "imageurl": "https://picsum.photos/200/300/769144"
+            },
+            "profile": {
+              "meurl": "https://picsum.photos/100/100/669111"
+            },
+            "message": {
+              "me": "In the end, we only regret the chances we didn’t take."
+            }
+          },
+          {
+            "name": "Emily_1961",
+            "like": 353,
+            "address": "Bangalore Boulevard",
+            "status": {
+              "video_url": "https://youtube.com/shorts/379909",
+              "imageurl": "https://picsum.photos/200/300/701346"
+            },
+            "profile": {
+              "meurl": "https://picsum.photos/100/100/107651"
+            },
+            "message": {
+              "me": "Every day is a new beginning."
+            }
+          }
+        ],
+        "message": [
+              {
+                "name": "nikhil_araya",
+                "comment": "you are looking good",
+                "user": {
+                  "name": "basant_yadav_jii",
+                  "comment": "you are my bestfrnd"
+                },
+                "user1": {
+                  "name": "nikil_kumar_singh",
+                  "comment": "nice bro"
+                },
+                "user3": {
+                  "name": "bipinsingh8052",
+                  "comment": "killer pic"
+                }
+              },
+              {
+                "name": "rahul_verma",
+                "comment": "awesome vibes!",
+                "user": {
+                  "name": "akash_gupta",
+                  "comment": "proud of you!"
+                },
+                "user1": {
+                  "name": "rohit_kumar",
+                  "comment": "keep it up!"
+                },
+                "user3": {
+                  "name": "sunil_yadav",
+                  "comment": "brother for life!"
+                }
+              },
+              {
+                "name": "riya_sharma",
+                "comment": "stunning picture!",
+                "user": {
+                  "name": "komal_jain",
+                  "comment": "you're glowing!"
+                },
+                "user1": {
+                  "name": "ankita_singh",
+                  "comment": "beautiful!"
+                },
+                "user3": {
+                  "name": "shivani_raj",
+                  "comment": "queen vibes!"
+                }
+              },
+              {
+                "name": "manoj_pandey",
+                "comment": "great shot!",
+                "user": {
+                  "name": "vikas_patel",
+                  "comment": "looking smart!"
+                },
+                "user1": {
+                  "name": "karan_chopra",
+                  "comment": "nice clicks"
+                },
+                "user3": {
+                  "name": "sahil_verma",
+                  "comment": "next level bro"
+                }
+              },
+              {
+                "name": "sneha_das",
+                "comment": "gorgeous as always!",
+                "user": {
+                  "name": "ria_chatterjee",
+                  "comment": "looking amazing!"
+                },
+                "user1": {
+                  "name": "shreya_patil",
+                  "comment": "slaying it!"
+                },
+                "user3": {
+                  "name": "neha_singh",
+                  "comment": "pretty girl!"
+                }
+              },
+              {
+                "name": "ajay_mehta",
+                "comment": "cool pic bro!",
+                "user": {
+                  "name": "vikram_thakur",
+                  "comment": "nice vibes!"
+                },
+                "user1": {
+                  "name": "abhishek_gupta",
+                  "comment": "killer pic!"
+                },
+                "user3": {
+                  "name": "deepak_verma",
+                  "comment": "looking sharp!"
+                }
+              },
+              {
+                "name": "priya_khanna",
+                "comment": "so lovely!",
+                "user": {
+                  "name": "divya_sharma",
+                  "comment": "beautiful!"
+                },
+                "user1": {
+                  "name": "radhika_jain",
+                  "comment": "gorgeous!"
+                },
+                "user3": {
+                  "name": "ananya_verma",
+                  "comment": "looking fab!"
+                }
+              },
+              {
+                "name": "vishal_singh",
+                "comment": "bro you're awesome!",
+                "user": {
+                  "name": "amit_dubey",
+                  "comment": "cool clicks"
+                },
+                "user1": {
+                  "name": "rahul_kumar",
+                  "comment": "king bro!"
+                },
+                "user3": {
+                  "name": "manish_thakur",
+                  "comment": "nice capture!"
+                }
+              },
+              {
+                "name": "kriti_shah",
+                "comment": "beautifully captured!",
+                "user": {
+                  "name": "pooja_malik",
+                  "comment": "love the vibe!"
+                },
+                "user1": {
+                  "name": "anusha_roy",
+                  "comment": "so pretty!"
+                },
+                "user3": {
+                  "name": "sangeeta_singh",
+                  "comment": "gorgeous shot!"
+                }
+              },
+              {
+                "name": "akash_chawla",
+                "comment": "such a cool pic!",
+                "user": {
+                  "name": "rohan_verma",
+                  "comment": "fire clicks!"
+                },
+                "user1": {
+                  "name": "ajit_das",
+                  "comment": "killing it bro!"
+                },
+                "user3": {
+                  "name": "nishant_patel",
+                  "comment": "great look!"
+                }
+              },
+              {
+                "name": "riya_das",
+                "comment": "just wow!",
+                "user": {
+                  "name": "sneha_roy",
+                  "comment": "so elegant!"
+                },
+                "user1": {
+                  "name": "priyanka_sharma",
+                  "comment": "love your smile!"
+                },
+                "user3": {
+                  "name": "ishita_patel",
+                  "comment": "diva vibes!"
+                }
+              },
+              {
+                "name": "yash_mehta",
+                "comment": "awesome outfit!",
+                "user": {
+                  "name": "arjun_singh",
+                  "comment": "nice clicks!"
+                },
+                "user1": {
+                  "name": "vikram_gupta",
+                  "comment": "looking stylish!"
+                },
+                "user3": {
+                  "name": "rajesh_kumar",
+                  "comment": "well done bro!"
+                }
+              },
+              {
+                "name": "neha_kapoor",
+                "comment": "so pretty!",
+                "user": {
+                  "name": "riya_jain",
+                  "comment": "amazing capture!"
+                },
+                "user1": {
+                  "name": "shweta_kumar",
+                  "comment": "beautiful vibes!"
+                },
+                "user3": {
+                  "name": "anushka_verma",
+                  "comment": "gorgeous shot!"
+                }
+              },
+              {
+                "name": "abhishek_malhotra",
+                "comment": "looking dashing!",
+                "user": {
+                  "name": "ajay_singh",
+                  "comment": "you nailed it!"
+                },
+                "user1": {
+                  "name": "amit_yadav",
+                  "comment": "sharp look!"
+                },
+                "user3": {
+                  "name": "karan_pandey",
+                  "comment": "killer vibes!"
+                }
+              },
+              {
+                "name": "riya_verma",
+                "comment": "beautiful as always!",
+                "user": {
+                  "name": "pooja_rai",
+                  "comment": "you're glowing!"
+                },
+                "user1": {
+                  "name": "sangeeta_jain",
+                  "comment": "love this!"
+                },
+                "user3": {
+                  "name": "anjali_gupta",
+                  "comment": "so elegant!"
+                }
+              },
+              {
+                "name": "naveen_kumar",
+                "comment": "great shot bro!",
+                "user": {
+                  "name": "arjun_gupta",
+                  "comment": "awesome clicks!"
+                },
+                "user1": {
+                  "name": "deepak_yadav",
+                  "comment": "cool style!"
+                },
+                "user3": {
+                  "name": "rahul_verma",
+                  "comment": "nice bro!"
+                }
+              },
+              {
+                "name": "priya_gupta",
+                "comment": "amazing pic!",
+                "user": {
+                  "name": "shruti_sharma",
+                  "comment": "so pretty!"
+                },
+                "user1": {
+                  "name": "ridhima_rai",
+                  "comment": "love this vibe!"
+                },
+                "user3": {
+                  "name": "aarti_jain",
+                  "comment": "stunning clicks!"
+                }
+              },
+              {
+                "name": "rohit_verma",
+                "comment": "next level bro!",
+                "user": {
+                  "name": "manoj_gupta",
+                  "comment": "proud of you!"
+                },
+                "user1": {
+                  "name": "ajay_singh",
+                  "comment": "nice clicks!"
+                },
+                "user3": {
+                  "name": "sahil_malik",
+                  "comment": "killing it!"
+                }
+              },
+              {
+                "name": "anita_jain",
+                "comment": "such a lovely pic!",
+                "user": {
+                  "name": "megha_verma",
+                  "comment": "you're glowing!"
+                },
+                "user1": {
+                  "name": "radhika_rai",
+                  "comment": "love this shot!"
+                },
+                "user3": {
+                  "name": "anjali_patel",
+                  "comment": "stunning look!"
+                }
+              },
+              {
+                "name": "sneha_pandey",
+                "comment": "just amazing!",
+                "user": {
+                  "name": "kriti_sharma",
+                  "comment": "love this vibe!"
+                },
+                "user1": {
+                  "name": "riya_gupta",
+                  "comment": "beautiful clicks!"
+                },
+                "user3": {
+                  "name": "priya_verma",
+                  "comment": "so elegant!"
+                }
+              }
+            ]
+          
+          
     }

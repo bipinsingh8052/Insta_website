@@ -34,7 +34,9 @@ function Account_Home_page() {
             <div className="first">
                 <div className="img">
                     <img src="" alt="" />
+                    <div>
                     <p>pvtt.ydvv.shivank</p><span>Followed by vivek.pov</span>
+                    </div>
                 </div>
                 
                 <span>Follow</span>
@@ -42,7 +44,10 @@ function Account_Home_page() {
             <div className="first">
                 <div className="img">
                     <img src="" alt="" />
+                    <div>
                     <p>ankit_aawadhya</p><span>Followed by m_o_n_u_1_4_3__</span>
+
+                    </div>
                 </div>
                 
                 <span>Follow</span>
@@ -51,8 +56,10 @@ function Account_Home_page() {
             <div className="first">
                 <div className="img">
                     <img src="" alt="" />
+                    <div>
                     <p>
                     _raju_yv5</p><span>Followed by bhojpurijunction6</span>
+                    </div>
                 </div>
                 
                 <span>Follow</span>
@@ -60,7 +67,9 @@ function Account_Home_page() {
             <div className="first">
                 <div className="img">
                     <img src="" alt="" />
+                    <div>
                     <p>rkdfconfessions_</p><span>rkdfconfessions_</span>
+                    </div>
                 </div>
                 
                 <span>Follow</span>
@@ -68,8 +77,10 @@ function Account_Home_page() {
             <div className="first">
                 <div className="img">
                     <img src="" alt="" />
+                    <div>
                     <p>sekhu.17
                     </p><span>Followed by kaushal_ydv_09_</span>
+                    </div>
                 </div>
                 
                 <span>Follow</span>
