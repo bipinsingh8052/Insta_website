@@ -21,9 +21,9 @@ function Home_page() {
     //     </div>
     //    <div className="fa"> <Account_Home_page/></div>
     // </div>
-    <Account_Home_page/>
+    // <Account_Home_page/>
     // <Post/>
-    // <Comment_page/>
+    <Comment_page/>
     // 
     // <Working_on_page/>
     // <Story/>

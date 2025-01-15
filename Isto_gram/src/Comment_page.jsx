@@ -1,21 +1,23 @@
 import {useEffect, useRef,useState} from 'react'
 import './Comment.css'
 import Post from './Post'
-
-function Comment_page() {
-      let [dots,setdots]=useState(<i className="fa-solid fa-ellipsis"></i>)
-       let [option,setoption]=useState(false)
+import axios from 'axios'
+function Comment_page(props) {
       let [change_page_post,set_change_page_post]=useState(false)
       let [comment,setcomment]=useState('View all comments');
       let [c_input,setc_input]=useState({
         comments:""
       })
+      let [api_data_p,set_api_data_p]=useState(null)
        let [p,setp]=useState(false);
        let [m,setm]=useState(false)
        let [s,sets]=useState(false)
        let like_counter =useRef("");
-
-
+    //    let [mess_all,set_mess_all]=useState([]);
+       let {id}=props;
+       
+       id=1;
+       console.log(id);
 
 
        function input_comment(e){
@@ -90,7 +92,7 @@ function Comment_page() {
             // </div>
             
     
-            )
+          " ")
        }
        function save(){
         sets(!s);
@@ -111,35 +113,12 @@ function Comment_page() {
         }
     }
         function closeit(){
-            setdots(<i className="fa-solid fa-ellipsis"></i>)
-            console.log(dots);
+            // setdots(<i className="fa-solid fa-ellipsis"></i>)
+            // console.log(dots);
         }
         
-        function changeIt(){
-            setoption(!option)
-            if(option){
-                setdots(
-                    <div className="in" onClick={closeit}>
-                        <div className="box">
-                            <p><span>Report</span></p>
-                            <p><span>Unfollow</span></p>
-                            <p>Add to favourites</p>
-                            <p>Go to post</p>
-                            <p>About this account</p>
-                            <p onClick={closeit}>Cancel</p>
-                           
-                        </div>
-                    </div>
-                )
-            }
-            else{
-                setdots(<i className="fa-solid fa-ellipsis"></i>)
-            }
-             
-            
-        }
 
-        function close_back(e){
+        function close_back(){
             set_change_page_post(true)
 
         }
@@ -151,33 +130,62 @@ function Comment_page() {
 
             console.log(c_input.comments)
         }
-        // useEffect(()=>{
-        //     console.log("useeffercct")
-        // },[])
+        useEffect(()=>{
+            axios.get(`http://localhost:3000/all_data_info_in_insta/${id}`)
+            .then(res=>{
+                console.log(res)
+                set_api_data_p(res.data)
+                // post_image=res.data;
+               
+            })
+
+            .catch(res=>{
+                console.log(res,"not working")
+            })
+            // axios.get('http://localhost:3000/message')
+            // .then(res=>{
+            //     // console.log(res)
+            //     set_mess_all(res.data);
+            // })
+        },[])
+        // console.log(api_data_p)
+        
+        
+        // console.log(post_image);
+        // console.log(mess_all)
+        console.log(api_data_p)
+        if(!api_data_p){
+            return <p>Loading...</p>;
+        }
+        
   return (
     <>
+     
       <div className="comment_section">
             <div className="main_section">
-                
                     <button onClick={close_back}><i className="fa-solid fa-xmark"></i></button>
 
                  <div className='all_killer'>
-                        <div className="image">
-                            <img src="./full.jpg" alt="" />
+                       { 
+                        
+                        <div className="image " >
+                            <img src={api_data_p.status.imageurl} alt="" />
                          </div>
+                        
+                        }
                     <div className="comment_info">
                         <div className="first">
                             <div className="user_info">
-                                        <img src="./full.jpg" alt="" />
+                                        <img src={api_data_p.profile.meurl} alt="" />
                                         <div className="username">
-                                            <p>vicky_baba_98</p>
-                                            <span>Naini</span>
+                                            <p>{api_data_p.name}</p>
+                                            <span>{api_data_p.address}</span>
                                         </div>
                             </div>
                                     {/* {(dot_true)?{setdots}:{dots}} */}
-                            <div onClick={changeIt}>
+                            <div>
 
-                                        {dots}
+                            <i className="fa-solid fa-ellipsis"></i>
                             </div>
                         </div>
                         <div className="messaging">
@@ -186,137 +194,112 @@ function Comment_page() {
 
                                 <div className="main_message">
                                     <div className="info_all">
-                                                <img src="./full." alt="" />
+                                                <img src={api_data_p.messageinfo.urlimg} alt="" />
                                                 <div className="para">
-                                                    <p>vicky_baba_98</p>
-                                                    <span>मैं और मेरे भाई ही मेरी ताक़त है
-                                                    आज जो भी हूँ वही सब के दाम पे ही हूँ
-                                                    बाक़ी सब अपने हाल पे ठीक है
-                                                    जय सुमेश्वर नाथ महादेव।</span>
+                                                    <p>{api_data_p.messageinfo.name}</p>
+                                                    <span>{api_data_p.messageinfo.comment}</span>
                                                     <h6> See Translation</h6>
                                                 </div>
                                     </div>
                                 </div>
-                                <div className="first_message">
+
+
+                                {
+                                    (api_data_p.messageinfo.user.urlimg!=" ")?<div className="first_message">
                                     <div className="all_data">
-                                            <img src="" alt="" />
+                                            <img src={api_data_p.messageinfo.user.urlimg} alt="" />
                                         <div className="name">
-                                            <h5>nauvgavcb <span>ertyuiopoiuylorm  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ab veritatis soluta tempore dignissimos eius ducimus aspernatur repellat a enim laborum, maiores nemo at, quis magni cumque aliquid repellendus quos!trertyuioiuytrertyuioiuytrertyuio</span></h5>
-                                            <h1><span>2h</span> <span>1 like</span> <span>Reply</span></h1>
+                                            <h5>{api_data_p.messageinfo.user.name}<span>{api_data_p.messageinfo.user.comment}</span></h5>
+                                            <h1><span>2h</span> <span>1 like</span> <span>delete</span></h1>
                                         </div>
                                     </div>
                                     <div onClick={likeit}>
                                         {(p)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
                                     </div>
-                                </div>
+                                </div>:"first "
+                                }
 
 
 
 
 
-                                <div className="first_message">
+                                {
+                                    (api_data_p.messageinfo.user1.urlimg!="")?<div className="first_message">
                                     <div className="all_data">
-                                            <img src="" alt="" />
+                                            <img src={api_data_p.messageinfo.user1.urlimg} alt="" />
                                         <div className="name">
-                                            <h5>nauvgavcb <span>ertyuiopoiuylorm  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ab veritatis soluta tempore dignissimos eius ducimus aspernatur repellat a enim laborum, maiores nemo at, quis magni cumque aliquid repellendus quos!trertyuioiuytrertyuioiuytrertyuio</span></h5>
-                                            <h1><span>2h</span> <span>1 like</span> <span>Reply</span></h1>
+                                            <h5>{api_data_p.messageinfo.user1.name}<span>{api_data_p.messageinfo.user1.comment}</span></h5>
+                                            <h1><span>2h</span> <span>1 like</span> <span>delete</span></h1>
                                         </div>
                                     </div>
-                                    <i className="fa-regular fa-heart"></i>
-                                </div>
-                                <div className="first_message">
-                                    <div className="all_data">
-                                            <img src="" alt="" />
-                                        <div className="name">
-                                            <h5>nauvgavcb <span>ertyuiopoiuylorm  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ab veritatis soluta tempore dignissimos eius ducimus aspernatur repellat a enim laborum, maiores nemo at, quis magni cumque aliquid repellendus quos!trertyuioiuytrertyuioiuytrertyuio</span></h5>
-                                            <h1><span>2h</span> <span>1 like</span> <span>Reply</span></h1>
-                                        </div>
+                                    <div onClick={likeit}>
+                                        {(p)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
                                     </div>
-                                    <i className="fa-regular fa-heart"></i>
-                                </div><div className="first_message">
-                                    <div className="all_data">
-                                            <img src="" alt="" />
-                                        <div className="name">
-                                            <h5>nauvgavcb <span>ertyuiopoiuylorm  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ab veritatis soluta tempore dignissimos eius ducimus aspernatur repellat a enim laborum, maiores nemo at, quis magni cumque aliquid repellendus quos!trertyuioiuytrertyuioiuytrertyuio</span></h5>
-                                            <h1><span>2h</span> <span>1 like</span> <span>Reply</span></h1>
-                                        </div>
-                                    </div>
-                                    <i className="fa-regular fa-heart"></i>
-                                </div><div className="first_message">
-                                    <div className="all_data">
-                                            <img src="" alt="" />
-                                        <div className="name">
-                                            <h5>nauvgavcb <span>ertyuiopoiuylorm  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ab veritatis soluta tempore dignissimos eius ducimus aspernatur repellat a enim laborum, maiores nemo at, quis magni cumque aliquid repellendus quos!trertyuioiuytrertyuioiuytrertyuio</span></h5>
-                                            <h1><span>2h</span> <span>1 like</span> <span>Reply</span></h1>
-                                        </div>
-                                    </div>
-                                    <i className="fa-regular fa-heart"></i>
-                                </div><div className="first_message">
-                                    <div className="all_data">
-                                            <img src="" alt="" />
-                                        <div className="name">
-                                            <h5>nauvgavcb <span>ertyuiopoiuylorm  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ab veritatis soluta tempore dignissimos eius ducimus aspernatur repellat a enim laborum, maiores nemo at, quis magni cumque aliquid repellendus quos!trertyuioiuytrertyuioiuytrertyuio</span></h5>
-                                            <h1><span>2h</span> <span>1 like</span> <span>Reply</span></h1>
-                                        </div>
-                                    </div>
-                                    <i className="fa-regular fa-heart"></i>
-                                </div><div className="first_message">
-                                    <div className="all_data">
-                                            <img src="" alt="" />
-                                        <div className="name">
-                                            <h5>nauvgavcb <span>ertyuiopoiuylorm  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ab veritatis soluta tempore dignissimos eius ducimus aspernatur repellat a enim laborum, maiores nemo at, quis magni cumque aliquid repellendus quos!trertyuioiuytrertyuioiuytrertyuio</span></h5>
-                                            <h1><span>2h</span> <span>1 like</span> <span>Reply</span></h1>
-                                        </div>
-                                    </div>
-                                    <i className="fa-regular fa-heart"></i>
-                                </div><div className="first_message">
-                                    <div className="all_data">
-                                            <img src="" alt="" />
-                                        <div className="name">
-                                            <h5>nauvgavcb <span>ertyuiopoiuylorm  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ab veritatis soluta tempore dignissimos eius ducimus aspernatur repellat a enim laborum, maiores nemo at, quis magni cumque aliquid repellendus quos!trertyuioiuytrertyuioiuytrertyuio</span></h5>
-                                            <h1><span>2h</span> <span>1 like</span> <span>Reply</span></h1>
-                                        </div>
-                                    </div>
-                                    <i className="fa-regular fa-heart"></i>
-                                </div><div className="first_message">
-                                    <div className="all_data">
-                                            <img src="" alt="" />
-                                        <div className="name">
-                                            <h5>nauvgavcb <span>ertyuiopoiuylorm  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ab veritatis soluta tempore dignissimos eius ducimus aspernatur repellat a enim laborum, maiores nemo at, quis magni cumque aliquid repellendus quos!trertyuioiuytrertyuioiuytrertyuio</span></h5>
-                                            <h1><span>2h</span> <span>1 like</span> <span>Reply</span></h1>
-                                        </div>
-                                    </div>
-                                    <i className="fa-regular fa-heart"></i>
-                                </div><div className="first_message">
-                                    <div className="all_data">
-                                            <img src="" alt="" />
-                                        <div className="name">
-                                            <h5>nauvgavcb <span>ertyuiopoiuylorm  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ab veritatis soluta tempore dignissimos eius ducimus aspernatur repellat a enim laborum, maiores nemo at, quis magni cumque aliquid repellendus quos!trertyuioiuytrertyuioiuytrertyuio</span></h5>
-                                            <h1><span>2h</span> <span>1 like</span> <span>Reply</span></h1>
-                                        </div>
-                                    </div>
-                                    <i className="fa-regular fa-heart"></i>
-                                </div><div className="first_message">
-                                    <div className="all_data">
-                                            <img src="" alt="" />
-                                        <div className="name">
-                                            <h5>nauvgavcb <span>ertyuiopoiuylorm  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ab veritatis soluta tempore dignissimos eius ducimus aspernatur repellat a enim laborum, maiores nemo at, quis magni cumque aliquid repellendus quos!trertyuioiuytrertyuioiuytrertyuio</span></h5>
-                                            <h1><span>2h</span> <span>1 like</span> <span>Reply</span></h1>
-                                        </div>
-                                    </div>
-                                    <i className="fa-regular fa-heart"></i>
-                                </div><div className="first_message">
-                                    <div className="all_data">
-                                            <img src="" alt="" />
-                                        <div className="name">
-                                            <h5>nauvgavcb <span>ertyuiopoiuylorm  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ab veritatis soluta tempore dignissimos eius ducimus aspernatur repellat a enim laborum, maiores nemo at, quis magni cumque aliquid repellendus quos!trertyuioiuytrertyuioiuytrertyuio</span></h5>
-                                            <h1><span>2h</span> <span>1 like</span> <span>Reply</span></h1>
-                                        </div>
-                                    </div>
-                                    <i className="fa-regular fa-heart"></i>
-                                </div>
+                                </div>:" "
+                                }
 
-                                
+                                {
+                                    (api_data_p.messageinfo.user2.urlimg!="")?<div className="first_message">
+                                    <div className="all_data">
+                                            <img src={api_data_p.messageinfo.user2.urlimg} alt="" />
+                                        <div className="name">
+                                            <h5>{api_data_p.messageinfo.user2.name}<span>{api_data_p.messageinfo.user2.comment}</span></h5>
+                                            <h1><span>2h</span> <span>1 like</span> <span>delete</span></h1>
+                                        </div>
+                                    </div>
+                                    <div onClick={likeit}>
+                                        {(p)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
+                                    </div>
+                                </div>:" "
+                                }
+
+
+
+                                {
+                                    (api_data_p.messageinfo.user3.urlimg!="")?<div className="first_message">
+                                    <div className="all_data">
+                                            <img src={api_data_p.messageinfo.user3.urlimg} alt="" />
+                                        <div className="name">
+                                            <h5>{api_data_p.messageinfo.user3.name}<span>{api_data_p.messageinfo.user3.comment}</span></h5>
+                                            <h1><span>2h</span> <span>1 like</span> <span>delete</span></h1>
+                                        </div>
+                                    </div>
+                                    <div onClick={likeit}>
+                                        {(p)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
+                                    </div>
+                                </div>:" "
+                                }
+
+
+                                {
+                                    (api_data_p.messageinfo.user4.urlimg!="")?<div className="first_message">
+                                    <div className="all_data">
+                                            <img src={api_data_p.messageinfo.user4.urlimg} alt="" />
+                                        <div className="name">
+                                            <h5>{api_data_p.messageinfo.user4.name}<span>{api_data_p.messageinfo.user4.comment}</span></h5>
+                                            <h1><span>2h</span> <span>1 like</span> <span>delete</span></h1>
+                                        </div>
+                                    </div>
+                                    <div onClick={likeit}>
+                                        {(p)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
+                                    </div>
+                                </div>:" "
+                                }
+
+                                {
+                                    (api_data_p.messageinfo.user5.urlimg!="")?<div className="first_message">
+                                    <div className="all_data">
+                                            <img src={api_data_p.messageinfo.user5.urlimg} alt="" />
+                                        <div className="name">
+                                            <h5>{api_data_p.messageinfo.user5.name}<span>{api_data_p.messageinfo.user5.comment}</span></h5>
+                                            <h1><span>2h</span> <span>1 like</span> <span>delete</span></h1>
+                                        </div>
+                                    </div>
+                                    <div onClick={likeit}>
+                                        {(p)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
+                                    </div>
+                                </div>:" "
+                                }
                             </div>
 
                         </div>

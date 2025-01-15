@@ -183,7 +183,7 @@
 .in{
     position:absolute;top: 0px;
     left: 0px;
-    background-color: rgba(66, 43, 43, 0.686);
+    background-color: rgba(5, 5, 5, 0.055);
     height: 100vh;
     width: 100%;
     display: flex;
