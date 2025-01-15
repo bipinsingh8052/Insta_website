@@ -1,61 +1,49 @@
+import axios from 'axios';
+import Home_page from './Home_page';
 import './Status_show.css'
-import  { useRef, useState } from "react";
+import  { useEffect, useRef, useState } from "react";
 
-export default function Status_show() {
-    // const videoRef = useRef(null);
-    // const [isPlaying, setIsPlaying] = useState(false);
-    // const [volume, setVolume] = useState(1);
+export default function Status_show(props) {
+    let [close,setclose]=useState(false)
+    let [video,set_video]=useState(null)
+    let {id}=props;
+    id=1;
 
-    // const handlePlayPause = () => {
-    //     if (isPlaying) {
-    //         videoRef.current.pause();
-    //     } else {
-    //         videoRef.current.play();
-    //     }
-    //     setIsPlaying(!isPlaying);
-    // };
-
-    // const handleVolumeChange = (event) => {
-    //     const newVolume = event.target.value;
-    //     videoRef.current.volume = newVolume;
-    //     setVolume(newVolume);
-    // };
-
-    // const handleFullScreen = () => {
-    //     if (videoRef.current.requestFullscreen) {
-    //         videoRef.current.requestFullscreen();
-    //     }
-    // };
-
+    function Closebtn(){
+        // console.log(id)
+        setclose(true);
+    }
+   
+    if(close){
+        // return <Home_page/>
+    }
+    useEffect(()=>{
+        axios.get(`http://localhost:3000/all_data_info_in_insta/${id}`)
+        .then(res=>{
+            console.log(res.data)
+            set_video(res.data)
+        })
+    },[])
+    if(!video){
+        return <p>Loading...</p>
+    }
     return (
         <>
-       
-        {/* <div className="video-player">
-            <video
-                ref={videoRef}
-                width="100%"
-                src=" https://www.instagram.com/reel/DEzir4qCiMf/?utm_source=ig_web_copy_link"
-                // controls={false}
-                // poster="https://via.placeholder.com/600x400" // Add your poster image
-            ></video>
-            <div className="controls">
-                <button onClick={handlePlayPause}>
-                    {isPlaying ? "Pause" : "Play"}
-                </button>
-                <input
-                    type="range"
-                    min="0"
-                    max="1"
-                    step="0.1"
-                    value={volume}
-                    onChange={handleVolumeChange}
-                />
-                <button onClick={handleFullScreen}>Full Screen</button>
+        <div className="status_Section">
+            <div className="status_info">
+                <div className="header">
+                <i onClick={Closebtn} className="fa-solid fa-xmark"></i>
+                </div>
+                <div className='video'>
+                    <iframe src={video.status.video_url} frameborder="0" allow="autoplay; encrypted-media"
+        allowFullScreen
+        title="Video Player" ></iframe>
+
+            
+                </div>
             </div>
-        </div> */}
-        <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/4mVhw-LP_bw?si=QuM6WeEy2goyeX3l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
+        </div>
+
     </>
     );
 }
