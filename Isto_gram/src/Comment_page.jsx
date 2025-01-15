@@ -31,68 +31,7 @@ function Comment_page(props) {
         console.log(c_input.comments)
        }
        function viewComment(){
-        setcomment(
-            // <div className="comment_section">
-            //     <div className="main_section">
-                    
-            //             <button><i className="fa-solid fa-xmark"></i></button>
-    
-            //          <div className='all_killer'>
-            //                 <div className="image">
-            //                     <img src="./full.jpg" alt="" />
-            //                  </div>
-            //             <div className="comment_info">
-            //                 <div className="first">
-            //                     <div className="user_info">
-            //                                 <img src="./full.jpg" alt="" />
-            //                                 <div className="username">
-            //                                     <p>vicky_baba_98</p>
-            //                                     <span>Naini</span>
-            //                                 </div>
-            //                     </div>
-            //                             {/* {(dot_true)?{setdots}:{dots}} */}
-            //                     <div onClick={changeIt}>
-    
-            //                                 {dots}
-            //                     </div>
-            //                 </div>
-            //                 <div className="messaging">
-                             
-            //                 </div>
-            //                 <div className="post_footer">
-            //                     <div className="like">
-            //                         <div className="message">
-            //                             <div onClick={likeit}>
-            //                                 {(p)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
-            //                             </div>
-            //                             <div onClick={message}>
-            //                                 {(m)?<i className="fa-solid fa-message messaged"></i>: <i className="fa-regular fa-message"></i>}
-            //                             </div>
-            //                         </div>
-            //                     <div onClick={save}>
-            //                             {(s)?<i className="fa-solid fa-bookmark saved"></i>:  <i className="fa-regular fa-bookmark"></i>}
-            //                         </div>
-    
-            //                     </div>
-            //                     <p ref={like_counter}>33 <span>likes</span></p>
-            //                     <h5 onClick={viewComment}>{comment}</h5>
-            //                     <div className="input">
-            //                         <form >
-            //                             <i className="fa-regular fa-face-smile"></i>
-            //                             <input type="text" name='comment' value={c_input.comments}  onChange={input_comment} placeholder='Add a comment...' />
-            //                         </form>
-            //                         <button type='submit'>Post</button>
-            //                     </div>
-            //                 </div>
-    
-            //             </div>
-            //         </div>
-            //      </div>
-                    
-            // </div>
-            
-    
-          " ")
+        setcomment(" ")
        }
        function save(){
         sets(!s);
@@ -125,10 +64,31 @@ function Comment_page(props) {
         if(change_page_post){
             return<Post/>
         }
+        let count=2;
         function submit_comment(e){
+            count++;
             e.preventDefault();
 
             console.log(c_input.comments)
+
+            let a ="user"+count;
+            console.log(a);
+            let name =api_data_p.name;
+            let url =api_data_p.status.imageurl;
+            console.log(name,url)
+            let new_data={
+                ...api_data_p,
+                messageinfo:{
+                    {a}:{
+                        urlimg:`${url}`,
+                        name: `${name}`,
+                        comment:`${c_input.comments}`
+
+                    }
+                }
+
+            }
+            console.log(new_data)
         }
         useEffect(()=>{
             axios.get(`http://localhost:3000/all_data_info_in_insta/${id}`)

@@ -33,7 +33,7 @@ function Home_page() {
       <Account_Home_page/>
       </div>
    </div> */}
-   <Story/>
+   <Comment_page/>
   
    
    
