@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Footer_navbar_in_page from './Footer_navbar_in_page'
 import './Navbar.css'
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     let [inputvalue,setinput]=useState({
@@ -29,33 +30,49 @@ function Navbar() {
       <h1>Instagram</h1>
       </div>
       <ul className='ul'>
-        <li><div><i className="fa-solid fa-house"></i><span>Home</span></div></li>
-        <li>
+        <li><Link to="/home" style={{ textDecoration: "none" ,color:"white"}}><div > <i className="fa-solid fa-house"></i><span>Home</span></div></Link> </li>
+        <li><Link to="/working" style={{ textDecoration: "none" ,color:"white"}}>
             <div><i className="fa-solid fa-magnifying-glass"></i><span>Search</span></div>
+            </Link>
         </li>
         <li>
+        <Link to="/working" style={{ textDecoration: "none" ,color:"white"}}>
             <div><i className="fa-regular fa-compass"></i><span>Explore</span></div>
+            </Link>
         </li>
         <li>
+        <Link to="/working" style={{ textDecoration: "none" ,color:"white"}}>
             <div><i className="fa-solid fa-play"></i><span>Reels</span></div>
+            </Link>
         </li>
         <li>
+        <Link to="/working" style={{ textDecoration: "none" ,color:"white"}}>
             <div><i className="fa-brands fa-facebook-messenger"></i><span>Messages</span></div>
+            </Link>
         </li>
         <li>
+
+        <Link to="/working" style={{ textDecoration: "none" ,color:"white"}}>
             <div><i className="fa-regular fa-heart"></i><span>Notifications</span></div>
+            </Link>
         </li>
         <li>
+        <Link to="/working" style={{ textDecoration: "none" ,color:"white"}}>
             <div><i className="fa-regular fa-square-plus"></i><span>Create</span></div>
+            </Link>
         </li>
         <li className='photo'>
+        <Link to="/working" style={{ textDecoration: "none" ,color:"white"}}>
             <div>
                 <div className="circle">
                     <img src="./full.jpg" alt="" />
                 </div><span>Profile</span></div>
+                </Link>
         </li>
         <li>
+        <Link to="/working" style={{ textDecoration: "none" ,color:"white"}}>
             <div><i className="fa-solid fa-bars"></i><span>More</span></div>
+            </Link>
         </li>
         
       </ul>

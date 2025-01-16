@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import './Post.css'
 import Comment_page from './Comment_page'
 import axios from "axios"
+import { useNavigate } from 'react-router-dom'
 function Post() {
     let [dots,setdots]=useState(<i className="fa-solid fa-ellipsis"></i>)
    let [option,setoption]=useState(false)
@@ -14,7 +15,7 @@ function Post() {
    let [m,setm]=useState(false)
    let [s,sets]=useState(false)
    let like_counter =useRef("");
-  
+   let nav =useNavigate()
    
    function save(){
     sets(!s);
@@ -72,7 +73,8 @@ function Post() {
 
     }
     if(change_page){
-        return <Comment_page id={id_go_in_next_page}/>
+        <Comment_page id={id_go_in_next_page}/>
+        nav('/comments')
     }
     
     useEffect(()=>{

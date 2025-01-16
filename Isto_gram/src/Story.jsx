@@ -2,18 +2,22 @@ import { useEffect, useState } from 'react'
 import './Story.css'
 import Status_show from './Status_show';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Story() {
 
     let [close,setclose]=useState(false);
     let [status,set_Status]=useState([])
+    let nav =useNavigate()
     function StatusShow(id){
         console.log(id)
         setclose(true);
+        <StatusShow id={id} />
 
     }
     if(close){
-        // return <StatusShow/>
+        // return <StatusShow />
+        nav('/status')
     }
     useEffect(()=>{
         let a=document.querySelectorAll(".name p")

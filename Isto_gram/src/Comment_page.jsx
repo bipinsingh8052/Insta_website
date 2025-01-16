@@ -2,6 +2,7 @@ import {useEffect, useRef,useState} from 'react'
 import './Comment.css'
 import Post from './Post'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 function Comment_page(props) {
       let [change_page_post,set_change_page_post]=useState(false)
       let [comment,setcomment]=useState('View all comments');
@@ -13,6 +14,7 @@ function Comment_page(props) {
        let [m,setm]=useState(false)
        let [s,sets]=useState(false)
        let like_counter =useRef("");
+       let nav =useNavigate()
     //    let [mess_all,set_mess_all]=useState([]);
        let {id}=props;
        
@@ -62,7 +64,8 @@ function Comment_page(props) {
 
         }
         if(change_page_post){
-            return<Post/>
+            // return<Post/>
+            nav('/home')
         }
         let count=2;
         function submit_comment(e){
@@ -76,19 +79,19 @@ function Comment_page(props) {
             let name =api_data_p.name;
             let url =api_data_p.status.imageurl;
             console.log(name,url)
-            let new_data={
-                ...api_data_p,
-                messageinfo:{
-                    {a}:{
-                        urlimg:`${url}`,
-                        name: `${name}`,
-                        comment:`${c_input.comments}`
+            // let new_data={
+            //     ...api_data_p,
+            //     messageinfo:{
+            //         {a}:{
+            //             urlimg:`${url}`,
+            //             name: `${name}`,
+            //             comment:`${c_input.comments}`
 
-                    }
-                }
+            //         }
+            //     }
 
-            }
-            console.log(new_data)
+            // }
+            // console.log(new_data)
         }
         useEffect(()=>{
             axios.get(`http://localhost:3000/all_data_info_in_insta/${id}`)

@@ -3,6 +3,7 @@ import SignUp_Form from "./SignUp_Form";
 import './Login.css'
 
 import Home_page from "./Home_page";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Login() {
@@ -14,6 +15,7 @@ export default function Login() {
     email:"",
     password:""
   });
+  let nav =useNavigate();
   function inputvalue(e){
    
     const {name,value}=e.target;
@@ -23,7 +25,7 @@ export default function Login() {
     });
   }
   if(Click){
-    return <SignUp_Form/>
+    nav('/signup')
   }
 
 
@@ -52,7 +54,7 @@ export default function Login() {
     }
   }
   if(nextpage){
-    return <Home_page/>
+    nav('/home')
   }
   return (
     <>

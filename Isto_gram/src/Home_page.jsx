@@ -7,15 +7,18 @@ import Status_show from "./Status_show"
 import Story from "./Story"
 import Working_on_page from "./Working_on_page"
 import './Home_page.css'
+import { useNavigate } from "react-router-dom"
 
 function Home_page() {
+
+  let nav =useNavigate();
 
   return (
     
     
    <>
 
-   {/* <div className="Home_section_on_page">
+   <div className="Home_section_on_page">
       <div className="home_section_first">
           <div className="home_navbar">
           <Navbar/>
@@ -32,8 +35,8 @@ function Home_page() {
       <div className="home_section_three">
       <Account_Home_page/>
       </div>
-   </div> */}
-   <Comment_page/>
+   </div>
+   {/* <Comment_page/> */}
   
    
    
