@@ -1,8 +1,9 @@
-import {useEffect, useRef,useState} from 'react'
+import {useContext, useEffect, useRef,useState} from 'react'
 import './Comment.css'
-import Post from './Post'
+// import {Send_d} from './Post'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+// import {send_d} from './Post'
 function Comment_page(props) {
       let [change_page_post,set_change_page_post]=useState(false)
       let [comment,setcomment]=useState('View all comments');
@@ -13,15 +14,17 @@ function Comment_page(props) {
        let [p,setp]=useState(false);
        let [m,setm]=useState(false)
        let [s,sets]=useState(false)
+     
        let like_counter =useRef("");
        let nav =useNavigate()
     //    let [mess_all,set_mess_all]=useState([]);
        let {id}=props;
-       
+       console.log("id ",id);
        id=1;
        console.log(id);
 
-
+    //    let idname=useContext(Send_d)
+    //    console.log(idname);
        function input_comment(e){
         // e.preventDefault();
         let {name,value}=e.target;

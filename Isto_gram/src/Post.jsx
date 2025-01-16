@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { createContext, useEffect, useRef, useState } from 'react'
 import './Post.css'
 import Comment_page from './Comment_page'
 import axios from "axios"
@@ -8,12 +8,10 @@ function Post() {
    let [option,setoption]=useState(false)
    let [data,setdata]=useState([])
    let [change_page,setchange_page]=useState(false)
-
-
-
    let [p,setp]=useState(false);
    let [m,setm]=useState(false)
    let [s,sets]=useState(false)
+   let Send_d =createContext()
    let like_counter =useRef("");
    let nav =useNavigate()
    
@@ -67,13 +65,16 @@ function Post() {
     let id_go_in_next_page =null;
     function viewComment(id){
         console.log(id)
+       
         id_go_in_next_page=id;
+        // console.log(id)
+        <Comment_page id={id_go_in_next_page}/>
        setchange_page(true)
      
 
     }
     if(change_page){
-        <Comment_page id={id_go_in_next_page}/>
+       
         nav('/comments')
     }
     
@@ -150,6 +151,13 @@ function Post() {
             
         </div>
     </div>
+    {
+       change_page && (
+        <Send_d.Provider value={id_go_in_next_page} >
+            <Comment_page/>
+        </Send_d.Provider>
+       ) 
+    }
     </>
   )
 }
