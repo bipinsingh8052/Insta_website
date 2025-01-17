@@ -2,7 +2,7 @@ import {useContext, useEffect, useRef,useState} from 'react'
 import './Comment.css'
 // import {Send_d} from './Post'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 // import {send_d} from './Post'
 function Comment_page(props) {
       let [change_page_post,set_change_page_post]=useState(false)
@@ -17,6 +17,11 @@ function Comment_page(props) {
      
        let like_counter =useRef("");
        let nav =useNavigate()
+       let loc =useLocation()
+       let id_go_in_next_page=loc.status||"";
+       
+
+       console.log(id_go_in_next_page,"      main   id")
     //    let [mess_all,set_mess_all]=useState([]);
        let {id}=props;
        console.log("id ",id);

@@ -75,7 +75,10 @@ function Post() {
     }
     if(change_page){
        
-        nav('/comments')
+        // nav('/comments',id_go_in_next_page)
+         nav('/comments',{
+            name:{id_go_in_next_page}
+         })
     }
     
     useEffect(()=>{

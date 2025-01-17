@@ -12,7 +12,7 @@ function Story() {
     function StatusShow(id){
         console.log(id)
         setclose(true);
-        <StatusShow id={id} />
+        // <StatusShow id={id} />
 
     }
     if(close){
