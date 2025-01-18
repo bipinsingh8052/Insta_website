@@ -10,7 +10,7 @@ export default function Status_show(props) {
     let nav =useNavigate();
     let {id}=props;
     id=1;
-
+    let local_id=JSON.parse(localStorage.getItem("storyid"))
     function Closebtn(){
         // console.log(id)
         setclose(true);
@@ -21,7 +21,7 @@ export default function Status_show(props) {
         nav('/home')
     }
     useEffect(()=>{
-        axios.get(`http://localhost:3000/all_data_info_in_insta/${id}`)
+        axios.get(`http://localhost:3000/all_data_info_in_insta/${local_id}`)
         .then(res=>{
             console.log(res.data)
             set_video(res.data)

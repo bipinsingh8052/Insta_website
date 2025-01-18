@@ -11,8 +11,12 @@ function Comment_page(props) {
       let [change_page_post,set_change_page_post]=useState(false)
       let [comment,setcomment]=useState('View all comments');
       let [c_input,setc_input]=useState({
-        comments:""
+        urlimg:"https://st5.depositphotos.com/18151330/64581/i/450/depositphotos_645817810-stock-photo-attractive-indian-man-smoker-exhales.jpg",
+        name:"bipin Singh",
+        comment:""
       })
+      let [commentlike,setcommentlike]=useState(false)
+      let [New_comments,set_New_comments]=useState([])
       let [api_data_p,set_api_data_p]=useState(null)
        let [p,setp]=useState(false);
        let [m,setm]=useState(false)
@@ -27,22 +31,42 @@ function Comment_page(props) {
        console.log(id_go_in_next_page,"      main   id")
     //    let [mess_all,set_mess_all]=useState([]);
        let {id}=props;
-       console.log("id ",id);
+    //    console.log("id ",id);
        id=1;
-       console.log(id);
+    //    console.log(id);
 
     //    let idname=useContext(Send_d)
     //    console.log(idname);
+
+
+
+
+    // add data  all in there
        function input_comment(e){
         // e.preventDefault();
         let {name,value}=e.target;
-        console.log(name,value)
+        // console.log(name,value)
         setc_input({
             ...c_input,
             [name]:value
         })
-        console.log(c_input.comments)
+        // console.log(c_input.comments)
        }
+
+       function submit_comment(e){
+        // count++;
+        e.preventDefault();
+        // console.log(c_input)
+        axios.post("http://localhost:3000/message",c_input)
+        .then(res=>alert("you comment it !!!!!"))
+        
+    }
+// add data completed
+
+
+
+
+
        function viewComment(){
         setcomment(" ")
        }
@@ -57,11 +81,11 @@ function Comment_page(props) {
         setp(!p)
         if(p){
             like_counter.current.innerHTML='33 <span>likes</span>';
-            console.log(like_counter);
+            // console.log(like_counter);
         }
         else{
             like_counter.current.innerHTML='34 <span>likes</span>';
-            console.log(like_counter);
+            // console.log(like_counter);
         }
     }
         function closeit(){
@@ -78,39 +102,42 @@ function Comment_page(props) {
             // return<Post/>
             nav('/home')
         }
-        let count=2;
-        function submit_comment(e){
-            count++;
-            e.preventDefault();
+        // let count=2;
+       
+        // deleted comment
 
-            console.log(c_input.comments)
-
-            let a ="user"+count;
-            console.log(a);
-            let name =api_data_p.name;
-            let url =api_data_p.status.imageurl;
-            console.log(name,url)
-            // let new_data={
-            //     ...api_data_p,
-            //     messageinfo:{
-            //         {a}:{
-            //             urlimg:`${url}`,
-            //             name: `${name}`,
-            //             comment:`${c_input.comments}`
-
-            //         }
-            //     }
-
-            // }
-            // console.log(new_data)
+        function Deleted(id){
+            // console.log(id)
+            axios.delete(`http://localhost:3000/message/${id}`)
+            .then(res=>alert("Delete your comment ....."))
         }
+        function likeComment(){
+            setcommentlike(!commentlike)
+        if(commentlike){
+            like_counter.current.innerHTML='33 <span>likes</span>';
+            // console.log(like_counter);
+        }
+        else{
+            like_counter.current.innerHTML='34 <span>likes</span>';
+            // console.log(like_counter);
+        }
+        }
+
+        let local_id =JSON.parse(localStorage.getItem("commentid"));
+        console.log("local",local_id)
+        // deleted comment
         useEffect(()=>{
-            axios.get(`http://localhost:3000/all_data_info_in_insta/${id}`)
+            axios.get(`http://localhost:3000/all_data_info_in_insta/${local_id}`)
             .then(res=>{
-                console.log(res)
+                // console.log(res)
                 set_api_data_p(res.data)
                 // post_image=res.data;
                
+            })
+            axios.get ("http://localhost:3000/message")
+            .then(re=>{
+                // console.log("new data",re.data);
+                set_New_comments(re.data)
             })
 
             .catch(res=>{
@@ -122,15 +149,17 @@ function Comment_page(props) {
             //     set_mess_all(res.data);
             // })
         },[])
+        // Deleted,submit_comment
         // console.log(api_data_p)
         
-        
+
         // console.log(post_image);
-        // console.log(mess_all)
-        console.log(api_data_p)
+        // // console.log(mess_all)
+        // console.log(api_data_p)
         if(!api_data_p){
             return <p>Loading...</p>;
         }
+        
         
   return (
     <>
@@ -197,7 +226,7 @@ function Comment_page(props) {
 
 
 
-                                {
+                                {/* {
                                     (api_data_p.messageinfo.user1.urlimg!="")?<div className="first_message">
                                     <div className="all_data">
                                             <img src={api_data_p.messageinfo.user1.urlimg} alt="" />
@@ -210,9 +239,9 @@ function Comment_page(props) {
                                         {(p)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
                                     </div>
                                 </div>:" "
-                                }
+                                } */}
 
-                                {
+                                {/* {
                                     (api_data_p.messageinfo.user2.urlimg!="")?<div className="first_message">
                                     <div className="all_data">
                                             <img src={api_data_p.messageinfo.user2.urlimg} alt="" />
@@ -225,11 +254,11 @@ function Comment_page(props) {
                                         {(p)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
                                     </div>
                                 </div>:" "
-                                }
+                                } */}
 
 
 
-                                {
+                                {/* {
                                     (api_data_p.messageinfo.user3.urlimg!="")?<div className="first_message">
                                     <div className="all_data">
                                             <img src={api_data_p.messageinfo.user3.urlimg} alt="" />
@@ -242,25 +271,28 @@ function Comment_page(props) {
                                         {(p)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
                                     </div>
                                 </div>:" "
-                                }
+                                } */}
 
 
+                                
                                 {
-                                    (api_data_p.messageinfo.user4.urlimg!="")?<div className="first_message">
+                                    New_comments.map((e,index)=>{return (
+                                        <div className="first_message" key={index}>
                                     <div className="all_data">
-                                            <img src={api_data_p.messageinfo.user4.urlimg} alt="" />
+                                            <img src={e.urlimg} alt="" />
                                         <div className="name">
-                                            <h5>{api_data_p.messageinfo.user4.name}<span>{api_data_p.messageinfo.user4.comment}</span></h5>
-                                            <h1><span>2h</span> <span>1 like</span> <span>delete</span></h1>
+                                            <h5>{e.name}<span>{e.comment}</span></h5>
+                                            <h1><span>2h</span> <span>1 like</span> <span onClick={()=>Deleted(e.id)}>delete</span></h1>
                                         </div>
                                     </div>
-                                    <div onClick={likeit}>
-                                        {(p)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
+                                    <div onClick={likeComment}>
+                                        {(commentlike)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
                                     </div>
-                                </div>:" "
+                                </div>
+                                    )})
                                 }
 
-                                {
+                                {/* {
                                     (api_data_p.messageinfo.user5.urlimg!="")?<div className="first_message">
                                     <div className="all_data">
                                             <img src={api_data_p.messageinfo.user5.urlimg} alt="" />
@@ -273,7 +305,7 @@ function Comment_page(props) {
                                         {(p)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
                                     </div>
                                 </div>:" "
-                                }
+                                } */}
                             </div>
 
                         </div>
@@ -297,7 +329,7 @@ function Comment_page(props) {
                             <div className="input" >
                                 <form onSubmit={submit_comment} >
                                     <i className="fa-regular fa-face-smile"></i>
-                                    <input type="text" name='comments' value={c_input.comments}  onChange={input_comment} placeholder='Add a comment...' />
+                                    <input type="text" name='comment' value={c_input.comment}  onChange={input_comment} placeholder='Add a comment...' />
                                     <button type='submit'>Post</button>
                                 </form>
                                 

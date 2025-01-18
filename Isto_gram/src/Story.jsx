@@ -12,6 +12,7 @@ function Story() {
     function StatusShow(id){
         console.log(id)
         setclose(true);
+        localStorage.setItem("storyid",JSON.stringify(id))
         // <StatusShow id={id} />
 
     }

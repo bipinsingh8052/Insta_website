@@ -1,7 +1,7 @@
 import { createContext, useEffect, useRef, useState } from 'react'
 import './Post.css'
 import Comment_page from './Comment_page'
-import axios from "axios"
+import axios, { all } from "axios"
 import { useNavigate } from 'react-router-dom'
 function Post() {
     let [dots,setdots]=useState(<i className="fa-solid fa-ellipsis"></i>)
@@ -11,6 +11,49 @@ function Post() {
    let [p,setp]=useState(false);
    let [m,setm]=useState(false)
    let [s,sets]=useState(false)
+//    like counter
+
+
+   function likeit(id){
+            
+           
+        
+            setp(!p)
+            if(p){
+                let all_dil=id;
+            
+                let li =all_dil.like;
+                // console.log(all_dil,li)
+                let newk ={
+                    ...all_dil,
+                    like:li,id:" "}
+                    
+                console.log(newk);
+                axios.put(`http://localhost:3000/all_data_info_in_insta/${all_dil}`,newk)
+                .then(res=>{alert("update")})
+                like_counter.current.innerHTML=`33 <span>likes</span>`;
+                // console.log(like_counter);
+            }
+            else{
+                let all_dil=id;
+            
+                let li =all_dil.like;
+                // console.log(all_dil,li)
+                let newk ={
+                    ...all_dil,
+                    like:li+1,id:" "}
+                    
+                console.log(newk);
+                axios.put(`http://localhost:3000/all_data_info_in_insta/${all_dil}`,newk)
+                .then(res=>{alert("update")})
+                // like_counter.current.innerHTML=`34 <span>likes</span>`;
+                // console.log(like_counter);
+            }
+    }
+
+
+
+// like counter end
    let Send_d =createContext()
    let like_counter =useRef("");
    let nav =useNavigate()
@@ -21,18 +64,7 @@ function Post() {
    function message(){
     setm(!m)
    }
-   function likeit(id){
-    console.log(id)
-    setp(!p)
-    if(p){
-        like_counter.current.innerHTML=`33 <span>likes</span>`;
-        // console.log(like_counter);
-    }
-    else{
-        like_counter.current.innerHTML=`34 <span>likes</span>`;
-        // console.log(like_counter);
-    }
-}
+
     function closeit(){
         setdots(<i className="fa-solid fa-ellipsis"></i>)
         console.log(dots);
@@ -69,6 +101,7 @@ function Post() {
         id_go_in_next_page=id;
         // console.log(id)
         <Comment_page id={id_go_in_next_page}/>
+        localStorage.setItem("commentid",JSON.stringify(id))
        setchange_page(true)
      
 
@@ -84,9 +117,11 @@ function Post() {
     useEffect(()=>{
         axios.get("http://localhost:3000/all_data_info_in_insta")
         .then(res=>{
-            console.log(res)
-            console.log(res.data);
+            // console.log(res)
+            // console.log(res.data);
             setdata(res.data)
+            // onChange()
+    
         })
     },[])
    
@@ -124,7 +159,7 @@ function Post() {
                     <div className="post_footer">
                         <div className="like">
                             <div className="message">
-                            <div onClick={()=>likeit(e.id)}>
+                            <div onClick={()=>likeit(e)}>
                                 {(p)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
                             </div>
                             <div onClick={message}>

@@ -111,6 +111,7 @@
 
     .mini .upper{
         /* height: 200px; */
+        height: 20px;
         width: 100%;
         border: 1px solid black;
         background-color: black;
@@ -170,6 +171,8 @@
 
     .mini .upper{
         /* height: 200px; */
+
+        height: auto;
         width: 100%;
         /* border: 1px solid black; */
         background-color: black;
@@ -215,7 +218,7 @@
         border-radius: 5px;
         padding-left: 10px;
     }
-    .mini .upper .input .input_main input:::placeholder{
+    .mini .upper .input .input_main input::placeholder{
         padding-left: 1px;
     }
     .mini .upper .input .message {
