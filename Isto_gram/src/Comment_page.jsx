@@ -1,10 +1,13 @@
-import {useContext, useEffect, useRef,useState} from 'react'
+import {useEffect, useRef,useState} from 'react'
 import './Comment.css'
 // import {Send_d} from './Post'
 import axios from 'axios'
 import { useLocation, useNavigate } from 'react-router-dom'
 // import {send_d} from './Post'
 function Comment_page(props) {
+
+    console.log("object oass sdfkjsafk",props);
+    
       let [change_page_post,set_change_page_post]=useState(false)
       let [comment,setcomment]=useState('View all comments');
       let [c_input,setc_input]=useState({
