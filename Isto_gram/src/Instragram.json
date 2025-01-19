@@ -103,7 +103,7 @@
       "id": "258c"
     },
     {
-      "name": "Amit_1234",
+      "name": "Nikhil_singh",
       "like": 200,
       "address": "Mumbai Street",
       "status": {
@@ -154,7 +154,7 @@
       "id": "e043"
     },
     {
-      "name": "Ravi_5678",
+      "name": "Mohit_Yadav",
       "like": 150,
       "address": "Delhi Road",
       "status": {
@@ -205,7 +205,7 @@
       "id": "fd02"
     },
     {
-      "name": "Amit_1234",
+      "name": "Kumar_sonu",
       "like": 200,
       "address": "Mumbai Street",
       "status": {
@@ -256,7 +256,7 @@
       "id": "d5a1"
     },
     {
-      "name": "Ravi_5678",
+      "name": "sujit_singh",
       "like": 150,
       "address": "Delhi Road",
       "status": {
@@ -307,7 +307,7 @@
       "id": "0109"
     },
     {
-      "name": "Amit_1234",
+      "name": "Killer_boys",
       "like": 200,
       "address": "Mumbai Street",
       "status": {
@@ -357,59 +357,9 @@
       },
       "id": "fa01"
     },
+   
     {
-      "name": "Ravi_5678",
-      "like": 150,
-      "address": "Delhi Road",
-      "status": {
-        "video_url": "./vi8.mp4",
-        "imageurl": "https://i.pinimg.com/736x/b0/a3/2b/b0a32b5bd677488f3d565a3a80eca504.jpg"
-      },
-      "profile": {
-        "meurl": "https://cdn.pixabay.com/photo/2022/12/14/12/13/boys-attitude-handsome-pose-images-7655304_1280.jpg"
-      },
-      "message": {
-        "me": "The only limit to our realization of tomorrow is our doubts of today."
-      },
-      "messageinfo": {
-        "urlimg": "https://cdn.pixabay.com/photo/2022/12/14/12/13/boys-attitude-handsome-pose-images-7655304_1280.jpg",
-        "name": "neha_verma",
-        "comment": "खुश रहो, मुस्कुराते रहो।",
-        "user": {
-          "urlimg": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9020354_b_v8_ae.jpg",
-          "name": "manoj_jha",
-          "comment": "you are amazing"
-        },
-        "user1": {
-          "urlimg": "https://i0.wp.com/cswag.org/wp-content/uploads/2020/10/Teen-Girls_.jpg?resize=750%2C494&ssl=1",
-          "name": "suman_kumari",
-          "comment": "fantastic view"
-        },
-        "user2": {
-          "urlimg": "https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-          "name": "deepak_singh",
-          "comment": "lovely family"
-        },
-        "user3": {
-          "urlimg": "",
-          "name": "",
-          "comment": ""
-        },
-        "user4": {
-          "urlimg": "",
-          "name": "",
-          "comment": ""
-        },
-        "user5": {
-          "urlimg": "",
-          "name": "",
-          "comment": ""
-        }
-      },
-      "id": "6a25"
-    },
-    {
-      "name": "Amit_1234",
+      "name": "Niranjan",
       "like": 200,
       "address": "Mumbai Street",
       "status": {
@@ -459,7 +409,7 @@
       }
     },
     {
-      "name": "Ravi_5678",
+      "name": "Vishal_yadav",
       "like": 150,
       "address": "Delhi Road",
       "status": {
@@ -509,7 +459,7 @@
       }
     },
     {
-      "name": "Amit_1234",
+      "name": "Rinku_singh",
       "like": 200,
       "address": "Mumbai Street",
       "status": {
@@ -559,7 +509,7 @@
       }
     },
     {
-      "name": "Ravi_5678",
+      "name": "Harsh_yadav",
       "like": 150,
       "address": "Delhi Road",
       "status": {

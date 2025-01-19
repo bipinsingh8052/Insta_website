@@ -21,20 +21,8 @@ function Story() {
         nav('/status')
     }
     useEffect(()=>{
-        let a=document.querySelectorAll(".name p")
-        // console.log(a)
-
+       
         
-        for(let i=0;i<=a.length-1;i++){
-            if(a[i].innerHTML.length >9){
-                let b=a[i].innerHTML
-                let c=b.slice(0,9)
-
-                let d=c.concat("...");
-                a[i].innerHTML=d
-
-            }
-        }
         axios.get("http://localhost:3000/all_data_info_in_insta")
         .then(res=>{
             console.log(res.data);
@@ -55,7 +43,7 @@ function Story() {
                     <img src={e.profile.meurl} alt="" />
                 </div>
                 <div className="name">
-                    <p>{e.name}</p>
+                    <p>{(e.name.length>=9)?e.name.slice(0, 9).concat("..."):e.name}</p>
                 </div>
             </div>
             )

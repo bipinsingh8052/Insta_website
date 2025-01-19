@@ -148,8 +148,8 @@ function Comment_page(props) {
             //     // console.log(res)
             //     set_mess_all(res.data);
             // })
-        },[])
-        // Deleted,submit_comment
+        },[Deleted,submit_comment])
+        // 
         // console.log(api_data_p)
         
 
