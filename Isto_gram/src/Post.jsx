@@ -11,6 +11,7 @@ function Post() {
    let [p,setp]=useState(false);
    let [m,setm]=useState(false)
    let [s,sets]=useState(false)
+   let [id_save ,set_id_save]=useState("");
 //    like counter
 
 
@@ -97,21 +98,20 @@ function Post() {
     let id_go_in_next_page =null;
     function viewComment(id){
         console.log(id)
-       
+       set_id_save(id)
         id_go_in_next_page=id;
         // console.log(id)
-        <Comment_page id={id_go_in_next_page}/>
-        localStorage.setItem("commentid",JSON.stringify(id))
+        // <Comment_page id={id_go_in_next_page}/>
+        // localStorage.setItem("commentid",JSON.stringify(id))
        setchange_page(true)
      
 
     }
+    console.log("id save ",id_save)
     if(change_page){
        
         // nav('/comments',id_go_in_next_page)
-         nav('/comments',{
-            name:{id_go_in_next_page}
-         })
+         nav('/comments');
     }
     
     useEffect(()=>{
@@ -189,12 +189,15 @@ function Post() {
             
         </div>
     </div>
-    {
+    {/* {
        change_page && (
         <Send_d.Provider value={id_go_in_next_page} >
             <Comment_page/>
         </Send_d.Provider>
        ) 
+    } */}
+    {
+        change_page&&<Comment_page idnumb={id_save} />
     }
     </>
   )

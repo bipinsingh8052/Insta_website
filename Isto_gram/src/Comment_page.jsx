@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 // import {send_d} from './Post'
 function Comment_page(props) {
 
-    console.log("object oass sdfkjsafk",props);
+    // console.log("object oass sdfkjsafk",props);
     
       let [change_page_post,set_change_page_post]=useState(false)
       let [comment,setcomment]=useState('View all comments');
@@ -30,9 +30,9 @@ function Comment_page(props) {
 
        console.log(id_go_in_next_page,"      main   id")
     //    let [mess_all,set_mess_all]=useState([]);
-       let {id}=props;
-    //    console.log("id ",id);
-       id=1;
+       let {idnumb}=props;
+       console.log("id number in new",idnumb);
+    //    id=1;
     //    console.log(id);
 
     //    let idname=useContext(Send_d)
@@ -123,14 +123,15 @@ function Comment_page(props) {
         }
         }
 
-        let local_id =JSON.parse(localStorage.getItem("commentid"));
-        console.log("local",local_id)
+        // let local_id =JSON.parse(localStorage.getItem("commentid"));
+        // console.log("local",local_id)
         // deleted comment
         useEffect(()=>{
-            axios.get(`http://localhost:3000/all_data_info_in_insta/${local_id}`)
+            axios.get(`http://localhost:3000/all_data_info_in_insta/${idnumb}`)
             .then(res=>{
-                // console.log(res)
+                console.log("data info",res.data)
                 set_api_data_p(res.data)
+                console.log(api_data_p,"all data")
                 // post_image=res.data;
                
             })
@@ -138,33 +139,30 @@ function Comment_page(props) {
             .then(re=>{
                 // console.log("new data",re.data);
                 set_New_comments(re.data)
-            })
-
-            .catch(res=>{
-                console.log(res,"not working")
+                console.log(api_data_p)
             })
             // axios.get('http://localhost:3000/message')
             // .then(res=>{
             //     // console.log(res)
             //     set_mess_all(res.data);
             // })
-        },[Deleted,submit_comment])
-        // 
+        },[])
+        // Deleted,submit_comment
         // console.log(api_data_p)
         
 
         // console.log(post_image);
         // // console.log(mess_all)
         // console.log(api_data_p)
-        if(!api_data_p){
-            return <p>Loading...</p>;
-        }
+        // if(!api_data_p){
+        //     return <p>Loading...</p>;
+        // }
         
         
   return (
     <>
      
-      <div className="comment_section">
+      {/* <div className="comment_section">
             <div className="main_section">
                     <button onClick={close_back}><i className="fa-solid fa-xmark"></i></button>
 
@@ -185,7 +183,7 @@ function Comment_page(props) {
                                             <span>{api_data_p.address}</span>
                                         </div>
                             </div>
-                                    {/* {(dot_true)?{setdots}:{dots}} */}
+                                    
                             <div>
 
                             <i className="fa-solid fa-ellipsis"></i>
@@ -226,53 +224,6 @@ function Comment_page(props) {
 
 
 
-                                {/* {
-                                    (api_data_p.messageinfo.user1.urlimg!="")?<div className="first_message">
-                                    <div className="all_data">
-                                            <img src={api_data_p.messageinfo.user1.urlimg} alt="" />
-                                        <div className="name">
-                                            <h5>{api_data_p.messageinfo.user1.name}<span>{api_data_p.messageinfo.user1.comment}</span></h5>
-                                            <h1><span>2h</span> <span>1 like</span> <span>delete</span></h1>
-                                        </div>
-                                    </div>
-                                    <div onClick={likeit}>
-                                        {(p)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
-                                    </div>
-                                </div>:" "
-                                } */}
-
-                                {/* {
-                                    (api_data_p.messageinfo.user2.urlimg!="")?<div className="first_message">
-                                    <div className="all_data">
-                                            <img src={api_data_p.messageinfo.user2.urlimg} alt="" />
-                                        <div className="name">
-                                            <h5>{api_data_p.messageinfo.user2.name}<span>{api_data_p.messageinfo.user2.comment}</span></h5>
-                                            <h1><span>2h</span> <span>1 like</span> <span>delete</span></h1>
-                                        </div>
-                                    </div>
-                                    <div onClick={likeit}>
-                                        {(p)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
-                                    </div>
-                                </div>:" "
-                                } */}
-
-
-
-                                {/* {
-                                    (api_data_p.messageinfo.user3.urlimg!="")?<div className="first_message">
-                                    <div className="all_data">
-                                            <img src={api_data_p.messageinfo.user3.urlimg} alt="" />
-                                        <div className="name">
-                                            <h5>{api_data_p.messageinfo.user3.name}<span>{api_data_p.messageinfo.user3.comment}</span></h5>
-                                            <h1><span>2h</span> <span>1 like</span> <span>delete</span></h1>
-                                        </div>
-                                    </div>
-                                    <div onClick={likeit}>
-                                        {(p)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
-                                    </div>
-                                </div>:" "
-                                } */}
-
 
                                 
                                 {
@@ -292,20 +243,7 @@ function Comment_page(props) {
                                     )})
                                 }
 
-                                {/* {
-                                    (api_data_p.messageinfo.user5.urlimg!="")?<div className="first_message">
-                                    <div className="all_data">
-                                            <img src={api_data_p.messageinfo.user5.urlimg} alt="" />
-                                        <div className="name">
-                                            <h5>{api_data_p.messageinfo.user5.name}<span>{api_data_p.messageinfo.user5.comment}</span></h5>
-                                            <h1><span>2h</span> <span>1 like</span> <span>delete</span></h1>
-                                        </div>
-                                    </div>
-                                    <div onClick={likeit}>
-                                        {(p)?<i  className="fa-solid fa-heart liked"></i>:<i className="fa-regular fa-heart"></i>}
-                                    </div>
-                                </div>:" "
-                                } */}
+                               
                             </div>
 
                         </div>
@@ -340,7 +278,7 @@ function Comment_page(props) {
                 </div>
              </div>
                 
-        </div>
+        </div> */}
     </>
   )
 }
