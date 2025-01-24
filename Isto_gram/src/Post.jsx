@@ -95,14 +95,14 @@ function Post() {
          
         
     }
-    let id_go_in_next_page =null;
+   
     function viewComment(id){
-        console.log(id)
+   
        set_id_save(id)
-        id_go_in_next_page=id;
+        
         // console.log(id)
         // <Comment_page id={id_go_in_next_page}/>
-        // localStorage.setItem("commentid",JSON.stringify(id))
+        localStorage.setItem("commentid",JSON.stringify(id))
        setchange_page(true)
      
 

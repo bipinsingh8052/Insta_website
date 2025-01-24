@@ -1,7 +1,7 @@
 import axios from 'axios';
-import Home_page from './Home_page';
+// import Home_page from './Home_page';
 import './Status_show.css'
-import  { useEffect, useRef, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
 export default function Status_show(props) {
