@@ -289,207 +289,470 @@
 // export default Comment_page
 
 
+// import { useEffect, useRef, useState } from 'react';
+// import './Comment.css';
+// import axios from 'axios';
+// import { useLocation, useNavigate } from 'react-router-dom';
+
+// function Comment_page(props) {
+
+//   let [change_page_post, set_change_page_post] = useState(false);
+//   let [comment, setcomment] = useState('View all comments');
+//   let [c_input, setc_input] = useState({
+//     urlimg: "https://st5.depositphotos.com/18151330/64581/i/450/depositphotos_645817810-stock-photo-attractive-indian-man-smoker-exhales.jpg",
+//     name: "bipin Singh",
+//     comment: ""
+//   });
+//   let [commentlike, setcommentlike] = useState(false);
+//   let [New_comments, set_New_comments] = useState([]);
+//   let [api_data_p, set_api_data_p] = useState({});
+//   let [p, setp] = useState(false);
+//   let [m, setm] = useState(false);
+//   let [s, sets] = useState(false);
+//   let [message_True,set_message_true]=useState(false)
+//   let [edit_Message_data,set_edit_message_data]=useState({
+//     urlimg: "https://st5.depositphotos.com/18151330/64581/i/450/depositphotos_645817810-stock-photo-attractive-indian-man-smoker-exhales.jpg",
+//     name: "bipin Singh",
+//     comment: ""
+//   })
+//   let like_counter = useRef("");
+//   let nav = useNavigate();
+//   let loc = useLocation();
+//   let id_go_in_next_page = loc.status || "";
+
+//   let { idnumb } = props;
+
+//   // Handle comment input change
+//   function input_comment(e) {
+//     let { name, value } = e.target;
+//     setc_input({
+//       ...c_input,
+//       [name]: value
+//     });
+//   }
+
+//   // Submit comment
+//   function submit_comment(e) {
+//     e.preventDefault();
+//     axios.post("http://localhost:3000/message", c_input)
+//       .then(res => alert("you commented it !!!!!"));
+//   }
+
+//   // View comments
+//   function viewComment() {
+//     setcomment(" ");
+//   }
+
+//   // Toggle save
+//   function save() {
+//     sets(!s);
+//   }
+
+//   // Toggle message
+//   function message() {
+//     setm(!m);
+//   }
+
+//   // Like/unlike functionality
+//   function likeit() {
+//     setp(!p);
+//     if (p) {
+//       like_counter.current.innerHTML = '33 <span>likes</span>';
+//     } else {
+//       like_counter.current.innerHTML = '34 <span>likes</span>';
+//     }
+//   }
+
+//   // Navigate back to home
+//   function close_back() {
+//     set_change_page_post(true);
+//   }
+
+//   if (change_page_post) {
+//     nav('/home');
+//   }
+
+//   // Delete comment
+//   function Deleted(id) {
+//     axios.delete(`http://localhost:3000/message/${id}`)
+//       .then((res) => alert("Deleted your comment ....."));
+//   }
+
+//   // Like/unlike comment
+//   function likeComment() {
+//     setcommentlike(!commentlike);
+//     if (commentlike) {
+//       like_counter.current.innerHTML = '33 <span>likes</span>';
+//     } else {
+//       like_counter.current.innerHTML = '34 <span>likes</span>';
+//     }
+//   }
+
+//   let local_idi = JSON.parse(localStorage.getItem("commentid"));
+//   // console.log("local", local_idi);
+
+
+//   // update message
+
+//   function submit_message(e) {
+//     e.preventDefault();
+//     console.log(edit_Message_data)
+//     // axios.put("http://localhost:3000/message", c_input)
+//     //   .then(res => alert("you commented it !!!!!"));
+//   }
+//   const input_edit_comment=(e)=>{
+//     let {name,value}=e.target;
+//     set_New_comments({
+//       ...edit_Message_data,
+//       [name]:value
+//     })
+//   }
+//   //  update message
+
+//   // Fetch data on component mount
+//   useEffect(() => {
+//     axios.get(`http://localhost:3000/all_data_info_in_insta/${local_idi}`)
+//       .then(res => {
+//         // console.log("API response data", res.data);
+//         set_api_data_p(res.data);
+//       })
+//       .catch(error => {
+//         console.error("Error fetching data", error);
+//       });
+
+//     axios.get("http://localhost:3000/message")
+//       .then(re => {
+//         set_New_comments(re.data);
+//       });
+//   }, [Deleted, submit_comment,submit_message]);
+
+//   return (
+//     <>
+//       <div className="comment_section">
+//         <div className="main_section">
+//           <button onClick={close_back}><i className="fa-solid fa-xmark"></i></button>
+
+//           <div className='all_killer'>
+//             {/* Check if api_data_p.status exists */}
+//             {
+//               api_data_p?.status?.imageurl ? (
+//                 <div className="image">
+//                   <img src={api_data_p.status.imageurl} alt="Post" />
+//                 </div>
+//               ) : (
+//                 <p>Loading...</p>
+//               )
+//             }
+
+//             {/* Post and comment section */}
+//             <div className="comment_info">
+//               <div className="first">
+//                 <div className="user_info">
+//                   <img src={api_data_p?.profile?.meurl || ""} alt="User" />
+//                   <div className="username">
+//                     <p>{api_data_p?.name || "Loading..."}</p>
+//                     <span>{api_data_p?.address || "Loading..."}</span>
+//                   </div>
+//                 </div>
+//                 <div>
+//                   <i className="fa-solid fa-ellipsis"></i>
+//                 </div>
+//               </div>
+
+//               <div className="messaging">
+//                 <div className="mess">
+//                   {
+//                     New_comments.map((e, index) => {
+//                       return (
+//                         <div className="first_message" key={index}>
+//                           <div className="all_data">
+//                             <img src={e.urlimg} alt="" />
+//                             <div className="name">
+//                               <h5>{e.name}<span>{e.comment}</span></h5>
+//                               <h1><span>2h</span> <span onClick={()=>{set_message_true(!message_True),set_edit_message_data(e)}}>Edit</span> <span onClick={() => Deleted(e.id)}>delete</span></h1>
+//                             </div>
+//                           </div>
+//                           <div onClick={likeComment}>
+//                             {(commentlike) ? <i className="fa-solid fa-heart liked"></i> : <i className="fa-regular fa-heart"></i>}
+//                           </div>
+//                         </div>
+//                       );
+//                     })
+//                   }
+//                 </div>
+//               </div>
+
+//               <div className="post_footer">
+//                 <div className="like">
+//                   <div className="message">
+//                     <div onClick={likeit}>
+//                       {(p) ? <i className="fa-solid fa-heart liked"></i> : <i className="fa-regular fa-heart"></i>}
+//                     </div>
+//                     <div onClick={message}>
+//                       {(m) ? <i className="fa-solid fa-message messaged"></i> : <i className="fa-regular fa-message"></i>}
+//                     </div>
+//                   </div>
+//                   <div onClick={save}>
+//                     {(s) ? <i className="fa-solid fa-bookmark saved"></i> : <i className="fa-regular fa-bookmark"></i>}
+//                   </div>
+//                 </div>
+//                 <p ref={like_counter}>33 <span>likes</span></p>
+//                 <h5 onClick={viewComment}>{comment}</h5>
+//                 <div className="input">
+//                 {
+//                         (message_True)?
+//                         <>
+//                         <form onSubmit={submit_message}>
+//                         <i className="fa-regular fa-face-smile"></i>
+//                         <input type="text" name='comment' value={edit_Message_data.comment} onChange={input_edit_comment} />
+//                         <button type='submit'>Edit</button>
+                       
+//                       </form>
+//                       </>
+//                         :
+//                         <>
+//                       <form onSubmit={submit_comment}>
+//                         <i className="fa-regular fa-face-smile"></i>
+//                         <input type="text" name='comment' value={c_input.comment} onChange={input_comment} placeholder='Add a comment...' />
+//                         <button type='submit'>Post</button>
+                       
+//                       </form>
+//                       </>
+
+//                 } 
+                  
+//                 </div>
+//               </div>
+
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
+
+// export default Comment_page;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import { useEffect, useRef, useState } from 'react';
 import './Comment.css';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 function Comment_page(props) {
-
-  let [change_page_post, set_change_page_post] = useState(false);
-  let [comment, setcomment] = useState('View all comments');
-  let [c_input, setc_input] = useState({
+  const [change_page_post, set_change_page_post] = useState(false);
+  const [comment, setComment] = useState('View all comments');
+  const [c_input, setCInput] = useState({
     urlimg: "https://st5.depositphotos.com/18151330/64581/i/450/depositphotos_645817810-stock-photo-attractive-indian-man-smoker-exhales.jpg",
     name: "bipin Singh",
     comment: ""
   });
-  let [commentlike, setcommentlike] = useState(false);
-  let [New_comments, set_New_comments] = useState([]);
-  let [api_data_p, set_api_data_p] = useState({});
-  let [p, setp] = useState(false);
-  let [m, setm] = useState(false);
-  let [s, sets] = useState(false);
-
-  let like_counter = useRef("");
-  let nav = useNavigate();
-  let loc = useLocation();
-  let id_go_in_next_page = loc.status || "";
-
-  let { idnumb } = props;
+  const [commentlike, setCommentLike] = useState(false);
+  const [New_comments, setNewComments] = useState([]);
+  const [api_data_p, setApiDataP] = useState({});
+  const [p, setP] = useState(false);
+  const [m, setM] = useState(false);
+  const [s, setS] = useState(false);
+  const [message_True, setMessageTrue] = useState(false);
+  const [edit_Message_data, setEditMessageData] = useState({
+    urlimg: "https://st5.depositphotos.com/18151330/64581/i/450/depositphotos_645817810-stock-photo-attractive-indian-man-smoker-exhales.jpg",
+    name: "bipin Singh",
+    comment: ""
+  });
+  const like_counter = useRef(null);
+  const nav = useNavigate();
+  const loc = useLocation();
+  const local_idi = JSON.parse(localStorage.getItem("commentid"));
 
   // Handle comment input change
-  function input_comment(e) {
-    let { name, value } = e.target;
-    setc_input({
+  const input_comment = (e) => {
+    const { name, value } = e.target;
+    setCInput({
       ...c_input,
       [name]: value
     });
-  }
+  };
 
   // Submit comment
-  function submit_comment(e) {
+  const submit_comment = (e) => {
     e.preventDefault();
     axios.post("http://localhost:3000/message", c_input)
-      .then(res => alert("you commented it !!!!!"));
-  }
+      .then(() => alert("You commented it!"))
+      .catch(err => console.error("Error submitting comment:", err));
+  };
 
   // View comments
-  function viewComment() {
-    setcomment(" ");
-  }
+  const viewComment = () => setComment("");
 
   // Toggle save
-  function save() {
-    sets(!s);
-  }
+  const save = () => setS(!s);
 
   // Toggle message
-  function message() {
-    setm(!m);
-  }
+  const message = () => setM(!m);
 
   // Like/unlike functionality
-  function likeit() {
-    setp(!p);
-    if (p) {
-      like_counter.current.innerHTML = '33 <span>likes</span>';
-    } else {
-      like_counter.current.innerHTML = '34 <span>likes</span>';
-    }
-  }
+  const likeit = () => {
+    setP(!p);
+    like_counter.current.innerHTML = p ? '33 <span>likes</span>' : '34 <span>likes</span>';
+  };
 
   // Navigate back to home
-  function close_back() {
+  const close_back = () => {
     set_change_page_post(true);
-  }
-
-  if (change_page_post) {
-    nav('/home');
-  }
+    if (change_page_post) {
+      nav('/home');
+    }
+  };
 
   // Delete comment
-  function Deleted(id) {
+  const Deleted = (id) => {
     axios.delete(`http://localhost:3000/message/${id}`)
-      .then((res) => alert("Deleted your comment ....."));
-  }
+      .then(() => alert("Deleted your comment"))
+      .catch(err => console.error("Error deleting comment:", err));
+  };
 
   // Like/unlike comment
-  function likeComment() {
-    setcommentlike(!commentlike);
-    if (commentlike) {
-      like_counter.current.innerHTML = '33 <span>likes</span>';
-    } else {
-      like_counter.current.innerHTML = '34 <span>likes</span>';
-    }
-  }
+  const likeComment = () => {
+    setCommentLike(!commentlike);
+  };
 
-  let local_idi = JSON.parse(localStorage.getItem("commentid"));
-  console.log("local", local_idi);
+  // Handle edit message input change
+  const input_edit_comment = (e) => {
+    const { name, value } = e.target;
+    setEditMessageData({
+      ...edit_Message_data,
+      [name]: value
+    });
+  };
+
+  // Submit edited message
+  const submit_message = (e) => {
+    e.preventDefault();
+    axios.put(`http://localhost:3000/message/${edit_Message_data.id}`, edit_Message_data)
+      .then(() => alert("Message updated successfully"))
+      .catch(err => console.error("Error updating message:", err));
+  };
 
   // Fetch data on component mount
   useEffect(() => {
     axios.get(`http://localhost:3000/all_data_info_in_insta/${local_idi}`)
-      .then(res => {
-        console.log("API response data", res.data);
-        set_api_data_p(res.data);
-      })
-      .catch(error => {
-        console.error("Error fetching data", error);
-      });
+      .then(res => setApiDataP(res.data))
+      .catch(error => console.error("Error fetching data:", error));
 
     axios.get("http://localhost:3000/message")
-      .then(re => {
-        set_New_comments(re.data);
+      .then(res => {
+        setNewComments(Array.isArray(res.data) ? res.data : []);
+      })
+      .catch(error => {
+        console.error("Error fetching messages:", error);
+        setNewComments([]);
       });
-  }, [Deleted, submit_comment]);
+  }, [submit_message,Deleted,submit_comment]);
 
   return (
-    <>
-      <div className="comment_section">
-        <div className="main_section">
-          <button onClick={close_back}><i className="fa-solid fa-xmark"></i></button>
+    <div className="comment_section">
+      <div className="main_section">
+        <button onClick={close_back}><i className="fa-solid fa-xmark"></i></button>
 
-          <div className='all_killer'>
-            {/* Check if api_data_p.status exists */}
-            {
-              api_data_p?.status?.imageurl ? (
-                <div className="image">
-                  <img src={api_data_p.status.imageurl} alt="Post" />
-                </div>
-              ) : (
-                <p>Loading...</p>
-              )
-            }
+        <div className="all_killer">
+          {api_data_p?.status?.imageurl ? (
+            <div className="image">
+              <img src={api_data_p.status.imageurl} alt="Post" />
+            </div>
+          ) : (
+            <p>Loading...</p>
+          )}
 
-            {/* Post and comment section */}
-            <div className="comment_info">
-              <div className="first">
-                <div className="user_info">
-                  <img src={api_data_p?.profile?.meurl || ""} alt="User" />
-                  <div className="username">
-                    <p>{api_data_p?.name || "Loading..."}</p>
-                    <span>{api_data_p?.address || "Loading..."}</span>
-                  </div>
-                </div>
-                <div>
-                  <i className="fa-solid fa-ellipsis"></i>
+          <div className="comment_info">
+            <div className="first">
+              <div className="user_info">
+                <img src={api_data_p?.profile?.meurl || ""} alt="User" />
+                <div className="username">
+                  <p>{api_data_p?.name || "Loading..."}</p>
+                  <span>{api_data_p?.address || "Loading..."}</span>
                 </div>
               </div>
+              <div>
+                <i className="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
 
-              <div className="messaging">
-                <div className="mess">
-                  {
-                    New_comments.map((e, index) => {
-                      return (
-                        <div className="first_message" key={index}>
-                          <div className="all_data">
-                            <img src={e.urlimg} alt="" />
-                            <div className="name">
-                              <h5>{e.name}<span>{e.comment}</span></h5>
-                              <h1><span>2h</span> <span>1 like</span> <span onClick={() => Deleted(e.id)}>delete</span></h1>
-                            </div>
-                          </div>
-                          <div onClick={likeComment}>
-                            {(commentlike) ? <i className="fa-solid fa-heart liked"></i> : <i className="fa-regular fa-heart"></i>}
-                          </div>
-                        </div>
-                      );
-                    })
-                  }
+            <div className="messaging">
+              <div className="mess">
+                {Array.isArray(New_comments) && New_comments.map((e, index) => (
+                  <div className="first_message" key={index}>
+                    <div className="all_data">
+                      <img src={e.urlimg} alt="" />
+                      <div className="name">
+                        <h5>{e.name}<span>{e.comment}</span></h5>
+                        <h1>
+                          <span>2h</span>
+                          <span onClick={() => { setMessageTrue(!message_True); setEditMessageData(e); }}>Edit</span>
+                          <span onClick={() => Deleted(e.id)}>Delete</span>
+                        </h1>
+                      </div>
+                    </div>
+                    <div onClick={likeComment}>
+                      {commentlike ? <i className="fa-solid fa-heart liked"></i> : <i className="fa-regular fa-heart"></i>}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="post_footer">
+              <div className="like">
+                <div className="message">
+                  <div onClick={likeit}>
+                    {p ? <i className="fa-solid fa-heart liked"></i> : <i className="fa-regular fa-heart"></i>}
+                  </div>
+                  <div onClick={message}>
+                    {m ? <i className="fa-solid fa-message messaged"></i> : <i className="fa-regular fa-message"></i>}
+                  </div>
+                </div>
+                <div onClick={save}>
+                  {s ? <i className="fa-solid fa-bookmark saved"></i> : <i className="fa-regular fa-bookmark"></i>}
                 </div>
               </div>
-
-              <div className="post_footer">
-                <div className="like">
-                  <div className="message">
-                    <div onClick={likeit}>
-                      {(p) ? <i className="fa-solid fa-heart liked"></i> : <i className="fa-regular fa-heart"></i>}
-                    </div>
-                    <div onClick={message}>
-                      {(m) ? <i className="fa-solid fa-message messaged"></i> : <i className="fa-regular fa-message"></i>}
-                    </div>
-                  </div>
-                  <div onClick={save}>
-                    {(s) ? <i className="fa-solid fa-bookmark saved"></i> : <i className="fa-regular fa-bookmark"></i>}
-                  </div>
-                </div>
-                <p ref={like_counter}>33 <span>likes</span></p>
-                <h5 onClick={viewComment}>{comment}</h5>
-                <div className="input">
+              <p ref={like_counter}>33 <span>likes</span></p>
+              <h5 onClick={viewComment}>{comment}</h5>
+              <div className="input">
+                {message_True ? (
+                  <form onSubmit={submit_message}>
+                    <i className="fa-regular fa-face-smile"></i>
+                    <input type="text" name="comment" value={edit_Message_data.comment} onChange={input_edit_comment} />
+                    <button type="submit">Edit</button>
+                  </form>
+                ) : (
                   <form onSubmit={submit_comment}>
                     <i className="fa-regular fa-face-smile"></i>
-                    <input type="text" name='comment' value={c_input.comment} onChange={input_comment} placeholder='Add a comment...' />
-                    <button type='submit'>Post</button>
+                    <input type="text" name="comment" value={c_input.comment} onChange={input_comment} placeholder="Add a comment..." />
+                    <button type="submit">Post</button>
                   </form>
-                </div>
+                )}
               </div>
-
             </div>
+
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
 export default Comment_page;
+
