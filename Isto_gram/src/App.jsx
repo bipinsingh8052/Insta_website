@@ -10,8 +10,8 @@ import Account_Home_page from "./Account_Home_page"
 import Status_show from "./Status_show"
 import Working_on_page from "./Working_on_page"
 import Comment_page from "./Comment_page"
-
-
+import Admin_login from './Admin_login'
+import DashBoard from "./DashBoard"
 function App() {
   return (
     <>
@@ -30,6 +30,9 @@ function App() {
         <Route path="/status" element={<Status_show/>}/>
         <Route path="/working" element={<Working_on_page/>} />
         <Route path="/comments" element={<Comment_page/>} />
+
+        <Route path="/admindas" element={<Admin_login/>}/>
+        <Route path="/dashboard" element={<DashBoard/>} />
       </Routes>
       {/* <Home_page/> */}
 
