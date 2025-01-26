@@ -1,57 +1,6 @@
 {
   "all_data_info_in_insta": [
     {
-      "name": "Amit_1234",
-      "like": 200,
-      "address": "Mumbai Street",
-      "status": {
-        "video_url": "./driving2.mp4",
-        "imageurl": "https://media.istockphoto.com/id/1361217779/photo/portrait-of-happy-teenage-boy-at-park.jpg?b=1&s=612x612&w=0&k=20&c=0DsfkY4rz9aTdpuDt_HMMMxRsZHf50DGXiqSwS5d06U="
-      },
-      "profile": {
-        "meurl": "https://cdn.pixabay.com/photo/2022/09/08/15/16/cute-7441224_640.jpg"
-      },
-      "message": {
-        "me": "Life is either a daring adventure or nothing at all."
-      },
-      "messageinfo": {
-        "urlimg": "https://cdn.pixabay.com/photo/2022/09/08/15/16/cute-7441224_640.jpg",
-        "name": "rahul_sharma",
-        "comment": "सपने वो नहीं जो हम सोते वक्त देखते हैं, सपने वो हैं जो हमें सोने नहीं देते।",
-        "user": {
-          "urlimg": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9020354_b_v8_ae.jpg",
-          "name": "sita_devi",
-          "comment": "you inspire me"
-        },
-        "user1": {
-          "urlimg": "https://i0.wp.com/cswag.org/wp-content/uploads/2020/10/Teen-Girls_.jpg?resize=750%2C494&ssl=1",
-          "name": "ajay_kumar",
-          "comment": "awesome pic"
-        },
-        "user2": {
-          "urlimg": "https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-          "name": "priya_singh",
-          "comment": "great shot"
-        },
-        "user3": {
-          "urlimg": "",
-          "name": "",
-          "comment": ""
-        },
-        "user4": {
-          "urlimg": "",
-          "name": "",
-          "comment": ""
-        },
-        "user5": {
-          "urlimg": "",
-          "name": "",
-          "comment": ""
-        }
-      },
-      "id": "5cb7"
-    },
-    {
       "name": "Ravi_5678",
       "like": 150,
       "address": "Delhi Road",
