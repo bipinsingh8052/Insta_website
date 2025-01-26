@@ -12,6 +12,10 @@ import Working_on_page from "./Working_on_page"
 import Comment_page from "./Comment_page"
 import Admin_login from './Admin_login'
 import DashBoard from "./DashBoard"
+import Dashboard_data from "./Dashboard_data"
+import DashboardInsert from "./DashboardInsert"
+
+
 function App() {
   return (
     <>
@@ -33,6 +37,8 @@ function App() {
 
         <Route path="/admindas" element={<Admin_login/>}/>
         <Route path="/dashboard" element={<DashBoard/>} />
+        <Route path="/dashboardData" element={<Dashboard_data/>} />
+        <Route path="/dashboardinsert" element={<DashboardInsert/>}/>
       </Routes>
       {/* <Home_page/> */}
 
