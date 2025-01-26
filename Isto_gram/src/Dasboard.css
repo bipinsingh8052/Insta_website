@@ -1,0 +1,404 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+   
+}
+.Dashboard {
+    height: auto;
+    width: 100%;
+    border: 1px solid black;
+}
+.Dashboard .navbar_heading{
+    height: 15%;
+    width: 100%;
+    background-color: rgb(32, 31, 30);
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.Dashboard .navbar_heading h1{
+   font-size: 30px;
+   font-family: cursive;
+   color: whitesmoke;
+   padding-top: 20px;
+   padding-bottom: 20px;
+}
+.Dashboard .nav{
+    height: 15%;
+    width: 100%;
+    border: 2px solid black;
+}
+.Dashboard .nav nav {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.Dashboard .nav nav .logo{
+    height: 70px;
+    width: 70px;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Dashboard .nav nav  ul {
+    display: flex;
+    gap: 30px;
+}
+.Dashboard .nav nav  ul li{
+    list-style-type: none;
+    padding: 15px;
+    border-radius: 10px;
+    border-bottom: 2.5px solid transparent;
+    /* box-shadow: 0px 4px 2px yellowgreen; */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.Dashboard .nav nav  ul li:hover{
+    cursor: pointer;
+    background-color: rgb(228, 235, 235);
+    border-bottom: 2.5px solid rgb(127, 235, 18);
+    /* box-shadow: 2px 2px 2px yellowgreen; */
+
+}
+
+.Dashboard  .search_bar{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid rgb(223, 79, 39);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.Dashboard  .search_bar .input{
+    height: 35px;
+    width: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.Dashboard  .search_bar .input input{
+    width: 80%;
+    height: 80%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+.Dashboard  .search_bar .input  i{
+    font-size: 20px;
+    cursor: pointer;
+}
+.Dashboard  .search_bar .input  i:hover{
+    cursor: pointer;
+    color: rgb(233, 31, 24);
+}
+.Dashboard  .search_bar .seach_option{
+    height:35px;
+    width: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.Dashboard  .search_bar .seach_option #cars{
+    width: 35%;
+   
+    border: none;
+    outline: none;
+}
+.Dashboard  .search_bar .seach_option #cars:hover{
+    cursor: pointer;
+    
+}
+.Dashboard  .search_bar .seach_option input{
+    width: 50%;
+    outline: none;
+    border: none;
+    font-size: 16px;
+}
+.Dashboard  .search_bar .seach_option i{
+    font-size: 20px;
+}
+.Dashboard  .search_bar .seach_option i:hover{
+    cursor: pointer;
+    color: red;
+}
+
+
+
+.Dashboard .tabels{
+    height: auto;
+    width: 100%;
+    /* overflow-y: scroll; */
+    overflow-x: scroll;
+    border: 1px solid black;
+
+}
+.Dashboard .tabels .inner_tabels{
+    height: auto;
+    width: auto;
+    /* background-color: blue; */
+}
+.Dashboard .tabels .inner_tabels table {
+    background-color: blueviolet;
+
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+   
+    
+    .Dashboard .navbar_heading h1{
+        font-size:28px;
+        font-family: cursive;
+        color: whitesmoke;
+        padding-top: 10px;
+        padding-bottom: 10px;
+     }
+    
+    .Dashboard .nav nav {
+       
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .Dashboard .nav nav .logo{
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Dashboard .nav nav  ul {
+        display: flex;
+        gap: 30px;
+    }
+    .Dashboard .nav nav  ul li{
+        list-style-type: none;
+        padding: 10px;
+        border-radius: 10px;
+        border-bottom: 2.5px solid transparent;
+        /* box-shadow: 0px 4px 2px yellowgreen; */
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .Dashboard .nav nav  ul li:hover{
+        cursor: pointer;
+        background-color: rgb(228, 235, 235);
+        border-bottom: 2.5px solid rgb(127, 235, 18);
+        /* box-shadow: 2px 2px 2px yellowgreen; */
+    
+    }
+   
+    
+    
+   
+    .Dashboard  .search_bar .input input{
+        width: 80%;
+        height: 80%;
+        border: none;
+        outline: none;
+        font-size: 14px;
+    }
+    .Dashboard  .search_bar .input  i{
+        font-size: 18px;
+        cursor: pointer;
+    }
+    .Dashboard  .search_bar .input  i:hover{
+        cursor: pointer;
+        color: rgb(233, 31, 24);
+    }
+    .Dashboard  .search_bar .seach_option{
+        height:35px;
+        width: auto;
+        border: 1px solid black;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+    
+   
+    
+    .Dashboard  .search_bar .seach_option input{
+        width: 50%;
+        outline: none;
+        border: none;
+        font-size: 14px;
+    }
+    .Dashboard  .search_bar .seach_option i{
+        font-size: 18px;
+    }
+    
+    
+    
+    
+   
+    
+
+}
+@media screen and (max-width: 420px) {
+   
+    
+   
+    .Dashboard .navbar_heading h1{
+       font-size: 18px;
+       font-family: cursive;
+       color: whitesmoke;
+       padding-top: 10px;
+       padding-bottom: 10px;
+    }
+    .Dashboard .nav{
+        height: 15%;
+        width: 100%;
+        
+    }
+    .Dashboard .nav nav {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        /* justify-content: center; */
+        justify-content: start;
+        align-items: start;
+        gap: 5px;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .Dashboard .nav nav .logo{
+        height: 50px;
+        width: 50px;
+        /* border: 2px solid black; */
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Dashboard .nav nav  ul {
+        display: flex;
+        gap: 5px;
+        border-top: 1px solid rgb(183, 226, 230);
+        padding-top: 10px;
+        width: 100%;
+    }
+    .Dashboard .nav nav  ul li{
+        list-style-type: none;
+        padding: 5px;
+        font-size: 16px;
+        border-radius: 10px;
+        border-bottom: 2.5px solid transparent;
+        /* box-shadow: 0px 4px 2px yellowgreen; */
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .Dashboard .nav nav  ul li:hover{
+        cursor: pointer;
+        background-color: rgb(228, 235, 235);
+        border-bottom: 2.5px solid rgb(127, 235, 18);
+        /* box-shadow: 2px 2px 2px yellowgreen; */
+    
+    }
+  
+    .Dashboard  .search_bar{
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: 1px solid rgb(223, 79, 39);
+        background-color: rgb(28, 26, 26);
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+    .Dashboard  .search_bar .input{
+        height: 35px;
+        width: 80%;
+        background-color: whitesmoke;
+        border: 1px solid black;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+    .Dashboard  .search_bar .input input{
+        width: 80%;
+        height: 80%;
+        border: none;
+        outline: none;
+        font-size: 15px;
+    }
+    .Dashboard  .search_bar .input  i{
+        font-size: 18px;
+        cursor: pointer;
+    }
+    .Dashboard  .search_bar .input  i:hover{
+        cursor: pointer;
+        color: rgb(233, 31, 24);
+    }
+    .Dashboard  .search_bar .seach_option{
+        height:35px;
+        background-color: whitesmoke;
+        width: auto;
+        border: 1px solid black;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .Dashboard  .search_bar .seach_option #cars{
+        width: 35%;
+       
+        border: none;
+        outline: none;
+    }
+    .Dashboard  .search_bar .seach_option #cars:hover{
+        cursor: pointer;
+        
+    }
+    .Dashboard  .search_bar .seach_option input{
+        width: 50%;
+        outline: none;
+        border: none;
+        font-size: 15px;
+    }
+    .Dashboard  .search_bar .seach_option i{
+        font-size: 18px;
+    }
+    .Dashboard  .search_bar .seach_option i:hover{
+        cursor: pointer;
+        color: red;
+    }
+    
+
+    
+}
