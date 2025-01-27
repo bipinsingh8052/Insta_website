@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import './Dasboard.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
-import DashboardInsert from './DashboardInsert';
+
 
 
 
@@ -66,6 +66,41 @@ export default function DashBoard() {
                }
              })
 
+
+            //  search btn
+    let [search_data,set_search_data]=useState([]);
+    let [searchinput,set_search_input]=useState("");  
+    let [search_option,set_search_option]=useState();
+    let[option_input,set_option_input]=useState("");
+
+      
+
+let filler;
+    const searchbtn=(e)=>{
+  
+       filler =search_data.filter((e)=>{return e.name===searchinput})
+      console.log(filler)
+    }
+
+    const Selectoption=(e)=>{
+    set_search_option(e.target.value)
+    
+      // set_search_option({...search_option,e.target.value})
+    }
+
+    const option_Search=(e)=>{
+      console.log(option_input)
+      console.log(search_option)
+      let fio =search_data.filter((e)=>{return e[search_option]==option_input})
+      console.log(fio)
+      set_All_data(fio)
+
+    }
+
+
+
+
+    // search btn
     //   edit 
 
     if(update_T){
@@ -74,7 +109,7 @@ export default function DashBoard() {
 
     }
 
-    let re =useRef("");
+
 
 
     // update from
@@ -148,11 +183,26 @@ export default function DashBoard() {
     useEffect(()=>{
         axios.get("http://localhost:3000/all_data_info_in_insta")
         .then(res=>{
-            console.log(res.data);
-            set_All_data(res.data);
+            // console.log(res.data);
+            if(!searchinput){
+              set_search_data(res.data);
+              set_All_data(res.data);
+            }
+            
+            else{
+              set_search_data(res.data);
+              filler =search_data.filter((e)=>{return e.name==searchinput})
+      // console.log(filler)
+      set_All_data(filler)
+      
+      
+
+            }
+            
+          
           })
      
-    },[InsertFrom,deleteitem,UpdateFrom])
+    },[InsertFrom,deleteitem,UpdateFrom,searchbtn])
     // InsertFrom
 
   return (
@@ -166,31 +216,38 @@ export default function DashBoard() {
                 <h1>Bipin</h1>
             </div>
             <ul>
-                <li onClick={()=>sethome(!home)}> Home</li>
-                <li onClick={()=>set_insert(!insert)}>Insert Data</li>
-                <li onClick={()=>set_edit_de(!edit_de_f)} >See All Data</li>
+                <li onClick={()=>{sethome(true),set_edit_de(false),set_insert(false)}}> Home</li>
+                <li onClick={()=>{set_insert(true),sethome(false),set_edit_de(false)}}>  Insert Data</li>
+                <li onClick={()=>{set_edit_de(true),sethome(false),set_insert(false)}} >See All Data</li>
                 <li onClick={()=>{set_login(true)}}>Logout</li>
             </ul>
         </nav>
     </div>
     <div className="search_bar">
                 <div className="input">
-                    <input type="text" placeholder='Enter the name' />
-                    <i className="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder='Enter the name' onChange={(e)=>{set_search_input(e.target.value)}} />
+                    <i className="fa-solid fa-magnifying-glass" onClick={searchbtn} ></i>
                 </div>
                 <div className="seach_option">
-                   <select id="cars">
+                   <select id="cars"  onChange={Selectoption}>
                     <option value="name">Enter the Name</option>
                     <option value="id">Enter the ID</option>
                     <option value="place">Enter the City</option>
                     <option value="likes">Enter the Likes</option>
                     </select>
-                    <input type="text" placeholder="Write.........." />
-                    <i className="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Write.........." onChange={(e)=>{set_option_input(e.target.value)}} />
+                    <i className="fa-solid fa-magnifying-glass" onClick={option_Search}></i>
                 </div>
             </div>
     <div className="tabels">
         <div className="inner_tabels">
+
+        {/*  */}
+
+
+
+
+
             {
             (edit_de_f)?(<table border='1' >
             <thead>
@@ -208,19 +265,20 @@ export default function DashBoard() {
                 </tr>
             </thead>
             <tbody>
+              
                 {
                     all_Data.map((e,index)=>{
                         return (
                             <tr key={index} >
                                 <td>{e.id}</td>
                                 <td>{e.name}</td>
-                                <td>{e.profile.meurl}</td>
+                                <td>{e.profile?.meurl}</td>
                                 <td>{e.address}</td>
-                                <td>{e.status.video_url}</td>
+                                <td>{e.status?.video_url}</td>
                                 <td>{e.like}</td>
-                                <td>{e.status.imageurl}</td>
-                                <td>{e.message.me}</td>
-                                <td>{e.messageinfo.comment}</td>
+                                <td>{e.status?.imageurl}</td>
+                                <td>{e.message?.me}</td>
+                                <td>{e.messageinfo?.comment}</td>
                                 <td><button onClick={()=>{set_update_data(e),set_update_t(true)}}>Edit </button></td>
                                  <td><button onClick={()=>{deleteitem(e.id)}}>Delete</button></td>
                             </tr>
@@ -256,13 +314,13 @@ export default function DashBoard() {
                             <tr key={index} >
                                 <td>{e.id}</td>
                                 <td>{e.name}</td>
-                                <td>{e.profile.meurl}</td>
+                                <td>{e.profile?.meurl ||" "}</td>
                                 <td>{e.address}</td>
-                                <td>{e.status.video_url}</td>
+                                <td>{e.status?.video_url || ""}</td>
                                 <td>{e.like}</td>
-                                <td>{e.status.imageurl}</td>
-                                <td>{e.message.me}</td>
-                                <td>{e.messageinfo.comment}</td>
+                                <td>{e.status?.imageurl ||" "}</td>
+                                <td>{e.message?.me||" "}</td>
+                                <td>{e.messageinfo?.comment}</td>
                             </tr>
                         )
                     })

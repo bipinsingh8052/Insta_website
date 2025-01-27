@@ -12241,7 +12241,7 @@
       "id": "1"
     },
     {
-      "name": "Amit_1234",
+      "name": "Ami",
       "like": 200,
       "address": "Mumbai Street",
       "status": {
@@ -12290,57 +12290,6 @@
         }
       },
       "id": "622b"
-    },
-    {
-      "id": "1978",
-      "name": "",
-      "like": "dfghjkl",
-      "address": "",
-      "status": {
-        "video_url": "",
-        "imageurl": ""
-      },
-      "profile": {
-        "meurl": ""
-      },
-      "message": {
-        "me": ""
-      },
-      "messageinfo": {
-        "urlimg": "https://cdn.pixabay.com/photo/2022/09/08/15/16/cute-7441224_640.jpg",
-        "name": "rahul_sharma",
-        "comment": "",
-        "user": {
-          "urlimg": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9020354_b_v8_ae.jpg",
-          "name": "sita_devi",
-          "comment": "you inspire me"
-        },
-        "user1": {
-          "urlimg": "https://i0.wp.com/cswag.org/wp-content/uploads/2020/10/Teen-Girls_.jpg?resize=750%2C494&ssl=1",
-          "name": "ajay_kumar",
-          "comment": "awesome pic"
-        },
-        "user2": {
-          "urlimg": "https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-          "name": "priya_singh",
-          "comment": "great shot"
-        },
-        "user3": {
-          "urlimg": "",
-          "name": "",
-          "comment": ""
-        },
-        "user4": {
-          "urlimg": "",
-          "name": "",
-          "comment": ""
-        },
-        "user5": {
-          "urlimg": "",
-          "name": "",
-          "comment": ""
-        }
-      }
     }
   ],
   "message": [
