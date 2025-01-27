@@ -72,6 +72,7 @@ export default function DashBoard() {
     let [searchinput,set_search_input]=useState("");  
     let [search_option,set_search_option]=useState();
     let[option_input,set_option_input]=useState("");
+    let [data_select,set_data_select]=useState([]);
 
       
 
@@ -87,13 +88,13 @@ let filler;
     
       // set_search_option({...search_option,e.target.value})
     }
-
+    let fio;
     const option_Search=(e)=>{
       console.log(option_input)
       console.log(search_option)
-      let fio =search_data.filter((e)=>{return e[search_option]==option_input})
+       fio =search_data.filter((e)=>{return e[search_option]==option_input})
       console.log(fio)
-      set_All_data(fio)
+      set_data_select(fio)
 
     }
 
@@ -265,6 +266,25 @@ let filler;
                 </tr>
             </thead>
             <tbody>
+              {
+                data_select.map((e,index)=>{
+                  return (
+                      <tr key={index} >
+                          <td>{e.id}</td>
+                          <td>{e.name}</td>
+                          <td>{e.profile?.meurl}</td>
+                          <td>{e.address}</td>
+                          <td>{e.status?.video_url}</td>
+                          <td>{e.like}</td>
+                          <td>{e.status?.imageurl}</td>
+                          <td>{e.message?.me}</td>
+                          <td>{e.messageinfo?.comment}</td>
+                          <td><button onClick={()=>{set_update_data(e),set_update_t(true)}}>Edit </button></td>
+                           <td><button onClick={()=>{deleteitem(e.id)}}>Delete</button></td>
+                      </tr>
+                  )
+              })
+              }
               
                 {
                     all_Data.map((e,index)=>{
@@ -308,6 +328,25 @@ let filler;
                 </tr>
             </thead>
             <tbody>
+            {
+                data_select.map((e,index)=>{
+                  return (
+                      <tr key={index} >
+                          <td>{e.id}</td>
+                          <td>{e.name}</td>
+                          <td>{e.profile?.meurl}</td>
+                          <td>{e.address}</td>
+                          <td>{e.status?.video_url}</td>
+                          <td>{e.like}</td>
+                          <td>{e.status?.imageurl}</td>
+                          <td>{e.message?.me}</td>
+                          <td>{e.messageinfo?.comment}</td>
+                          <td><button onClick={()=>{set_update_data(e),set_update_t(true)}}>Edit </button></td>
+                           <td><button onClick={()=>{deleteitem(e.id)}}>Delete</button></td>
+                      </tr>
+                  )
+              })
+              }
                 {
                     all_Data.map((e,index)=>{
                         return (
